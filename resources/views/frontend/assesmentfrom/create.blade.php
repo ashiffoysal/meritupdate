@@ -13,7 +13,7 @@
                             <h1>Unlock Your Potent<span>ial with a Free<img
                                         src="{{ asset('frontend/update-design') }}/assets/images/home/text-pos2.png"
                                         alt=""></span> Assessment</h1>
-                            <p>Complete the Form Below to Get Started!</p>
+                            <p>Complete the form below to get started!</p>
                         </div>
                     </div>
                 </div>
