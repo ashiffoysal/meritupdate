@@ -1,0 +1,1 @@
+<p>{!! $data->application_test_process  !!}</p>

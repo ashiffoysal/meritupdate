@@ -1,0 +1,240 @@
+/*responsive Teacher details*/
+@media (max-width: 576px) {
+  select.form-select {
+    margin-bottom: 10px !important;
+  }
+
+  span.sr {
+    margin-right: 10px;
+
+  }
+  .tech_btn_main {
+    margin-top: 20px !important;
+}
+  .tech_btn_msg {
+    margin-top: 27px !important;
+    margin-bottom: 5px !important;
+  }
+
+  .sel_option {
+    margin-bottom: 15px !important;
+  }
+
+  .tag_button .btn {
+    padding: 5px 10px;
+}
+
+  .tech_cont {
+    margin-top: 12px;
+  }
+
+  span.course {
+
+    padding: 1px 5px;
+    border-radius: 3px;
+
+  }
+
+  .main_te {
+    margin-top: 18px;
+  }
+
+  .tech_button {
+    margin-top: 13px !important;
+  }
+
+  select.form-select.alt_cls {
+    width: 100% !important;
+
+  }
+}
+
+/*responsive*/
+
+
+.form-check-input[type=radio] {
+  border-radius: 20%;
+}
+
+.form-check-input:checked {
+  background-color: #00db1d;
+  border-color: #00db1d;
+}
+
+/*Teacher details*/
+.tag_button .btn {
+  font-weight: 600;
+  box-shadow: 5px 5px 16px 0px rgba(0, 0, 0, 0.45);
+  -webkit-box-shadow: -2px 2px 5px 0px rgba(0, 0, 0, 0.45);
+  -moz-box-shadow: 5px 5px 16px 0px rgba(0, 0, 0, 0.45);
+  font-size: 12px;
+  margin-right: 5px;
+  border-radius: 5px;
+}
+
+.teacher_details {
+  margin-top: 30px;
+  border: 1px solid #e5e5e5;
+  border-radius: 5px;
+  padding: 15px;
+  background: #fff;
+  box-sizing: border-box;
+  -webkit-box-shadow: 2px 0px 9px 0px rgba(163, 163, 163, 0.75);
+  -moz-box-shadow: 2px 0px 9px 0px rgba(163, 163, 163, 0.75);
+  box-shadow: 2px 0px 5px 0px rgba(163, 163, 163, 0.75);
+}
+
+.teac_prof img {
+  width: 100%;
+  height: auto;
+  border: 5px solid #e5e5e5;
+  border-radius: 5px;
+}
+
+.tech_cont h4 {
+  font-size: 18px;
+  color: #00db1d;
+  margin-bottom: 0px;
+}
+
+.tech_cont span {
+  font-weight: 700;
+  font-size: 14px;
+  color: #686868;
+}
+
+.tech_review {
+  width: 50%;
+
+}
+
+.tech_pamt {
+  width: 50%;
+}
+
+.btn-success:hover {
+  color: #fff;
+
+}
+
+span.enroll {
+  background: #e3e3e3;
+  padding: 1px 10px;
+  border-radius: 4px;
+  /* margin-top: 19px; */
+}
+
+span.course {
+  background: #e3e3e3;
+  padding: 1px 20px;
+  border-radius: 4px;
+  /* margin-top: 19px; */
+
+}
+
+p.te_details {
+  margin-top: 6px;
+  line-height: 24px;
+  text-align: initial;
+  color: #686868;
+  font-size: 14px;
+}
+
+a.rem {
+  background-color: #00db1d;
+  padding: 5px 25px;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: 600;
+}
+
+.online h5 {
+  color: #ffffff;
+  font-size: 13px;
+  position: absolute;
+  font-weight: 500;
+  /* top: 10px; */
+  left: 10px;
+  background-color: #00db1d;
+  padding: 2px 15px;
+  border-radius: 20px;
+  top: 10%;
+}
+
+.teac_prof {
+  position: relative;
+}
+
+.rated h5 {
+  text-align: center;
+  font-size: 16px;
+  color: #fff;
+  background-color: #00db1d;
+  padding: 7px;
+  position: absolute;
+  bottom: 0%;
+  width: 100%;
+  left: 0%;
+  overflow: hidden;
+
+  font-weight: 500;
+}
+
+.eb {
+  margin-bottom: 7px;
+}
+
+.eb i {
+  color: #00db1d;
+}
+
+.review i.bx.bxs-star {
+  color: #ffe000;
+}
+
+.enroll i.bx.bxs-user {
+  position: relative;
+  top: 2px;
+  color: #00db1d;
+}
+
+.box_left_sel {
+  height: 1000px;
+  /* position: static; */
+  overflow-y: scroll;
+}
+
+.box_right_tea {
+  height: 1000px;
+  overflow-y: scroll;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  padding: 15px;
+}
+
+/*button*/
+a.nxt_oper {
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  background-color: #00db1d;
+  padding: 8px 40px;
+  border-radius: 5px;
+}
+
+a.nxt_msg {
+  color: #00db1d;
+  font-size: 18px;
+  font-weight: 600;
+  border: 1px solid #00db1d;
+  padding: 8px 65px;
+  border-radius: 5px;
+}
+
+.tech_btn_msg {
+  margin-top: 40px;
+}
+
+.tech_btn_main {
+  margin-top: 50px;
+}
