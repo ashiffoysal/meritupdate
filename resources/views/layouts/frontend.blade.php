@@ -4,8 +4,8 @@
           @yield('meta')
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        
-       
+
+
         <title>@yield('title') | {{ $companyInformation->company_name }}  </title>
         <meta name="robots" content="index, follow" />
         <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -33,9 +33,9 @@
         <!-- CSS Files -->
         <link rel="stylesheet" href="{{ asset('frontend/update-design') }}/assets/css/style.css">
         <link rel="stylesheet" href="{{ asset('frontend/update-design') }}/assets/css/responsive.css">
-        
-           
-     
+
+
+
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-LDKP2DXTYH"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -44,7 +44,13 @@
 
   gtag('config', 'G-LDKP2DXTYH');
 </script>
-
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "turrdbc906");
+</script>
 
 
 <!-- Meta Pixel Code -->
