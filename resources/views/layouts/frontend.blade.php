@@ -33,53 +33,58 @@
         <!-- CSS Files -->
         <link rel="stylesheet" href="{{ asset('frontend/update-design') }}/assets/css/style.css">
         <link rel="stylesheet" href="{{ asset('frontend/update-design') }}/assets/css/responsive.css">
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-LDKP2DXTYH"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
 
+          gtag('config', 'G-LDKP2DXTYH');
+        </script>
+        <script type="text/javascript">
+            (function(c,l,a,r,i,t,y){
+                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+            })(window, document, "clarity", "script", "turrdbc906");
+        </script>
+        <!-- Meta Pixel Code -->
+        <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '134063601552703');
+        fbq('track', 'PageView');
+        </script>
+        <noscript><img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=134063601552703&ev=PageView&noscript=1"
+        /></noscript>
+        <!-- End Meta Pixel Code -->
 
+        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-581538066">
+        </script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LDKP2DXTYH"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+          gtag('config', 'AW-581538066');
+        </script>
 
-  gtag('config', 'G-LDKP2DXTYH');
-</script>
-<script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "turrdbc906");
-</script>
-
-
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '134063601552703');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=134063601552703&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-581538066">
-</script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'AW-581538066');
-</script>
+        <style>
+        img {
+          opacity: 0;
+          transition: opacity 0.5s ease;
+        }
+        img[src] {
+          opacity: 1;
+        }
+        </style>
     </head>
     <body>
         @include('sweetalert::alert')
@@ -106,5 +111,26 @@ src="https://www.facebook.com/tr?id=134063601552703&ev=PageView&noscript=1"
         <script src="{{ asset('frontend/update-design') }}/assets/js/modernizr-3.11.2.min.js"></script>
         <!-- Custom JS (Handed)-->
         <script src="{{ asset('frontend/update-design') }}/assets/js/scripts.js"></script>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+        $(function() {
+          function lazyLoad() {
+            $('.lazy').each(function() {
+              if ($(this).offset().top < $(window).scrollTop() + $(window).height() + 200) {
+                var src = $(this).attr('data-src');
+                if (src) {
+                  $(this).attr('src', src).removeAttr('data-src');
+                }
+              }
+            });
+          }
+
+          // Run on scroll and on page load
+          $(window).on('scroll', lazyLoad);
+          lazyLoad();
+        });
+        </script>
+
     </body>
 </html>

@@ -3,9 +3,7 @@
 @section('meta_description','Merit Tutors are a leading provider of primary, secondary, and A-Level Tuition based in east London (Forest Gate and Ilford).')
 @section('content')
 <style>
-   .banner_left_contents h1
-
- {
+   .banner_left_contents h1{
     font-size: 69px;
     line-height: 81px;
     font-weight: 700;
@@ -20,7 +18,7 @@
                         <div class="banner_section">
                             <div class="banner_left">
                                 <div class="banner_left_contents">
-                                    <h1>Top Tuition Centre <span><img src="{{ asset('frontend/update-design') }}/assets/images/home/for-shape.png" alt=""></span> <br> in East London</h1>
+                                    <h1>Top Tuition Centre <span><img class="lazy" data-src="{{ asset('frontend/update-design') }}/assets/images/home/for-shape.png" alt=""></span> <br> in East London</h1>
                                     <p>Merit Tutors are <b>OFSTED Registered Childcare Centre</b> based on East London’s Tuition Centre of choice. A leading provider of Primary, Secondary and A-Level Tuition since 2004.</p>
                                     <p>We provide premium tuitions at the following:</p>
                                     <ul>
@@ -43,7 +41,7 @@
                                             <svg width="30" height="31" viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <rect y="0.81015" width="29.2881" height="29.2881" rx="14.6441" fill="#FF6775"/>
                                             <path d="M19.5254 12.0983L12.8135 18.8102L9.7627 15.7593" stroke="white" stroke-width="1.95254" stroke-linecap="round" stroke-linejoin="round"/>
-                                            </svg> 
+                                            </svg>
 
                                             Plaistow Branch
                                         </a></li>
@@ -55,18 +53,18 @@
                                 </div>
                                 <div class="banner_left_students">
                                     <ul>
-                                        <li><img src="{{ asset('frontend/update-design') }}/assets/images/home/student1.png" alt=""></li>
-                                        <li><img src="{{ asset('frontend/update-design') }}/assets/images/home/student2.png" alt=""></li>
-                                        <li><img src="{{ asset('frontend/update-design') }}/assets/images/home/student3.png" alt=""></li>
-                                        <li><img src="{{ asset('frontend/update-design') }}/assets/images/home/student4.png" alt=""></li>
-                                        <li><img src="{{ asset('frontend/update-design') }}/assets/images/home/student5.png" alt=""></li>
+                                        <li><img class="lazy" data-src="{{ asset('frontend/update-design') }}/assets/images/home/student1.png" alt=""></li>
+                                        <li><img class="lazy" data-src="{{ asset('frontend/update-design') }}/assets/images/home/student2.png" alt=""></li>
+                                        <li><img class="lazy" data-src="{{ asset('frontend/update-design') }}/assets/images/home/student3.png" alt=""></li>
+                                        <li><img class="lazy" data-src="{{ asset('frontend/update-design') }}/assets/images/home/student4.png" alt=""></li>
+                                        <li><img class="lazy" data-src="{{ asset('frontend/update-design') }}/assets/images/home/student5.png" alt=""></li>
                                     </ul>
                                     <p><span>800+</span> Happy Students</p>
                                 </div>
                             </div>
                             <div class="banner_right">
-                                <img src="{{ asset('frontend/update-design') }}/assets/images/home/banner-right.png" alt="">
-                                <div class="banner_right_logo"><a href="#"><img src="{{ asset('frontend/update-design') }}/assets/images/home/banner-logo.png" alt=""></a></div>
+                                <img class="lazy" data-src="{{ asset('frontend/update-design') }}/assets/images/home/banner-right.png" alt="">
+                                <div class="banner_right_logo"><a href="#"><img class="lazy" data-src="{{ asset('frontend/update-design') }}/assets/images/home/banner-logo.png" alt=""></a></div>
                             </div>
                         </div>
                     </div>
@@ -86,19 +84,19 @@
                         <div class="our_service">
                             <div class="default_title">
                                 <div class="default_title_left">
-                                    <h2>Why <span>Choose <img src="{{ asset('frontend/update-design') }}/assets/images/home/text-pos.png" alt=""></span> Our<img src="{{ asset('frontend/update-design') }}/assets/images/home/default-title-left.png" alt=""><br>Services</h2>
-                                    <!-- <div class="dtl_img"><img src="{{ asset('frontend/update-design') }}/assets/images/home/default-title-left.png" alt=""></div> -->
+                                    <h2>Why <span>Choose <img class="lazy" data-src="{{ asset('frontend/update-design') }}/assets/images/home/text-pos.png" alt=""></span> Our<img class="lazy" data-src="{{ asset('frontend/update-design') }}/assets/images/home/default-title-left.png" alt=""><br>Services</h2>
+                                    <!-- <div class="dtl_img"><img class="lazy" data-src="{{ asset('frontend/update-design') }}/assets/images/home/default-title-left.png" alt=""></div> -->
                                 </div>
                                 <div class="default_tite_right">
                                     <p>At Merit Tutors, we are dedicated to providing exceptional educational support tailored to meet the unique needs of each learner. Here are some compelling reasons why families trust us with their children’s education:</p>
-                                    <div class="dtr_img"><img src="{{ asset('frontend/update-design') }}/assets/images/home/default-title-right.png" alt=""></div>
+                                    <div class="dtr_img"><img class="lazy" data-src="{{ asset('frontend/update-design') }}/assets/images/home/default-title-right.png" alt=""></div>
                                 </div>
                             </div>
 
                             <div class="our_service_contents">
                                 <div class="our_service_contents_left">
-                                    <img src="{{ asset('frontend/update-design') }}/assets/images/home/our-service-cover.png" alt="">
-                                    <div class="our_service_contents_left_img"><img src="{{ asset('frontend/update-design') }}/assets/images/home/our-service.png" alt=""></div>
+                                    <img class="lazy" data-src="{{ asset('frontend/update-design') }}/assets/images/home/our-service-cover.png" alt="">
+                                    <div class="our_service_contents_left_img"><img class="lazy" data-src="{{ asset('frontend/update-design') }}/assets/images/home/our-service.png" alt=""></div>
                                 </div>
                                 <div class="our_service_contents_right">
                                     <div class="oscr_single_parent">
@@ -114,7 +112,7 @@
                                         </div>
                                         <div class="sss">
                                             <div class="oscr_single oscr_single2">
-                                                <img src="{{ asset('frontend/update-design') }}/assets/images/home/service-logo.png" alt="">
+                                                <img class="lazy" data-src="{{ asset('frontend/update-design') }}/assets/images/home/service-logo.png" alt="">
                                                 <p>Ofsted Registered Childcare Centre</p>
                                             </div>
                                         </div>
@@ -125,15 +123,15 @@
                                             <p>of our GCSE students secured grade 9 to 7 in 2021</p>
                                         </div>
                                     </div>
-                                    <div class="our_service_contents_right_icon"><img src="{{ asset('frontend/update-design') }}/assets/images/home/service-icon.png" alt=""></div>
+                                    <div class="our_service_contents_right_icon"><img class="lazy" data-src="{{ asset('frontend/update-design') }}/assets/images/home/service-icon.png" alt=""></div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="section_shape"><img src="{{ asset('frontend/update-design') }}/assets/images/home/section-shape.png" alt=""></div>
-            <div class="section_shape2"><img src="{{ asset('frontend/update-design') }}/assets/images/home/section-shape2.png" alt=""></div>
+            <div class="section_shape"><img class="lazy" data-src="{{ asset('frontend/update-design') }}/assets/images/home/section-shape.png" alt=""></div>
+            <div class="section_shape2"><img class="lazy" data-src="{{ asset('frontend/update-design') }}/assets/images/home/section-shape2.png" alt=""></div>
         </section>
         <!--================  End Our-Services Section  ================-->
 
@@ -148,29 +146,29 @@
                     <div class="col-md-12">
                         <div class="expert_tutors">
                             <div class="expert_tutors_left">
-                                <h4><span>Expert Tutors <img src="{{ asset('frontend/update-design') }}/assets/images/home/text-pos.png" alt=""></span> from Top UK Universities with Qualified Teacher Status (QTS) <img src="{{ asset('frontend/update-design') }}/assets/images/home/default-title-left.png" alt=""></h4>
+                                <h4><span>Expert Tutors <img class="lazy" data-src="{{ asset('frontend/update-design') }}/assets/images/home/text-pos.png" alt=""></span> from Top UK Universities with Qualified Teacher Status (QTS) <img class="lazy" data-src="{{ asset('frontend/update-design') }}/assets/images/home/default-title-left.png" alt=""></h4>
                                 <ul>
-                                    <li><a href="#"><img src="{{ asset('frontend/update-design') }}/assets/images/home/et1.png" alt=""></a></li>
-                                    <li><a href="#"><img src="{{ asset('frontend/update-design') }}/assets/images/home/et2.png" alt=""></a></li>
-                                    <li><a href="#"><img src="{{ asset('frontend/update-design') }}/assets/images/home/et3.png" alt=""></a></li>
-                                    <li><a href="#"><img src="{{ asset('frontend/update-design') }}/assets/images/home/et4.png" alt=""></a></li>
-                                    <li><a href="#"><img src="{{ asset('frontend/update-design') }}/assets/images/home/et5.png" alt=""></a></li>
-                                    <li><a href="#"><img src="{{ asset('frontend/update-design') }}/assets/images/home/et6.png" alt=""></a></li>
-                                    <li><a href="#"><img src="{{ asset('frontend/update-design') }}/assets/images/home/et7.png" alt=""></a></li>
-                                    <li><a href="#"><img src="{{ asset('frontend/update-design') }}/assets/images/home/et8.png" alt=""></a></li>
+                                    <li><a href="#"><img class="lazy" data-src="{{ asset('frontend/update-design') }}/assets/images/home/et1.png" alt=""></a></li>
+                                    <li><a href="#"><img class="lazy" data-src="{{ asset('frontend/update-design') }}/assets/images/home/et2.png" alt=""></a></li>
+                                    <li><a href="#"><img class="lazy" data-src="{{ asset('frontend/update-design') }}/assets/images/home/et3.png" alt=""></a></li>
+                                    <li><a href="#"><img class="lazy" data-src="{{ asset('frontend/update-design') }}/assets/images/home/et4.png" alt=""></a></li>
+                                    <li><a href="#"><img class="lazy" data-src="{{ asset('frontend/update-design') }}/assets/images/home/et5.png" alt=""></a></li>
+                                    <li><a href="#"><img class="lazy" data-src="{{ asset('frontend/update-design') }}/assets/images/home/et6.png" alt=""></a></li>
+                                    <li><a href="#"><img class="lazy" data-src="{{ asset('frontend/update-design') }}/assets/images/home/et7.png" alt=""></a></li>
+                                    <li><a href="#"><img class="lazy" data-src="{{ asset('frontend/update-design') }}/assets/images/home/et8.png" alt=""></a></li>
                                 </ul>
-                                <div class="expert_tutors_btn"><a href="#">All our Tutors are <span class="etbtn_img_black"><img src="{{ asset('frontend/update-design') }}/assets/images/home/etbtn-black.png" alt=""></span> <span class="etbtn_img_white"><img src="{{ asset('frontend/update-design') }}/assets/images/home/etbtn-white.png" alt=""></span></a></div>
+                                <div class="expert_tutors_btn"><a href="#">All our Tutors are <span class="etbtn_img_black"><img class="lazy" data-src="{{ asset('frontend/update-design') }}/assets/images/home/etbtn-black.png" alt=""></span> <span class="etbtn_img_white"><img class="lazy" data-src="{{ asset('frontend/update-design') }}/assets/images/home/etbtn-white.png" alt=""></span></a></div>
                             </div>
                             <div class="expert_tutors_right">
-                                <img src="{{ asset('frontend/update-design') }}/assets/images/home/et-cover.png" alt="">
-                                <div class="expert_tutors_img"><img src="{{ asset('frontend/update-design') }}/assets/images/home/et-img.png" alt=""></div>
+                                <img class="lazy" data-src="{{ asset('frontend/update-design') }}/assets/images/home/et-cover.png" alt="">
+                                <div class="expert_tutors_img"><img class="lazy" data-src="{{ asset('frontend/update-design') }}/assets/images/home/et-img.png" alt=""></div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="section_shape"><img src="{{ asset('frontend/update-design') }}/assets/images/home/section-shape.png" alt=""></div>
-            <div class="section_shape2"><img src="{{ asset('frontend/update-design') }}/assets/images/home/section-shape2.png" alt=""></div>
+            <div class="section_shape"><img class="lazy" data-src="{{ asset('frontend/update-design') }}/assets/images/home/section-shape.png" alt=""></div>
+            <div class="section_shape2"><img class="lazy" data-src="{{ asset('frontend/update-design') }}/assets/images/home/section-shape2.png" alt=""></div>
         </section>
         <!--================  End Expert-Tutors Section  ================-->
 
@@ -185,35 +183,35 @@
                                     <div class="cp_ountdown_single">
                                         <h3>100%</h3>
                                         <p>GCSE Pass Rate</p>
-                                        <div class="cp_ountdown_single_icon"><img src="{{ asset('frontend/update-design') }}/assets/images/home/icon4.png" alt=""></div>
+                                        <div class="cp_ountdown_single_icon"><img class="lazy" data-src="{{ asset('frontend/update-design') }}/assets/images/home/icon4.png" alt=""></div>
                                     </div>
                                 </div>
                                 <div class="cp_ountdown_single_parent">
                                     <div class="cp_ountdown_single cp_ountdown_single2">
                                         <h3>95%</h3>
                                         <p>SATs Above Average</p>
-                                        <div class="cp_ountdown_single_icon"><img src="{{ asset('frontend/update-design') }}/assets/images/home/icon5.png" alt=""></div>
+                                        <div class="cp_ountdown_single_icon"><img class="lazy" data-src="{{ asset('frontend/update-design') }}/assets/images/home/icon5.png" alt=""></div>
                                     </div>
                                 </div>
                                 <div class="cp_ountdown_single_parent">
                                     <div class="cp_ountdown_single cp_ountdown_single2">
                                         <h3>100%</h3>
                                         <p>A Level Pass Rate</p>
-                                        <div class="cp_ountdown_single_icon"><img src="{{ asset('frontend/update-design') }}/assets/images/home/icon6.png" alt=""></div>
+                                        <div class="cp_ountdown_single_icon"><img class="lazy" data-src="{{ asset('frontend/update-design') }}/assets/images/home/icon6.png" alt=""></div>
                                     </div>
                                 </div>
                                 <div class="cp_ountdown_single_parent">
                                     <div class="cp_ountdown_single cp_ountdown_single2">
                                         <h3>100%</h3>
                                         <p>11 Plus Pass Rate</p>
-                                        <div class="cp_ountdown_single_icon"><img src="{{ asset('frontend/update-design') }}/assets/images/home/icon7.png" alt=""></div>
+                                        <div class="cp_ountdown_single_icon"><img class="lazy" data-src="{{ asset('frontend/update-design') }}/assets/images/home/icon7.png" alt=""></div>
                                     </div>
                                 </div>
                             </div>
                             <div class="clilds_progress_contents">
                                 <div class="clilds_progress_contents_left">
-                                    <img src="{{ asset('frontend/update-design') }}/assets/images/home/childs-progress-cover.png" alt="">
-                                    <div class="clilds_progress_contents_left_img"><img src="{{ asset('frontend/update-design') }}/assets/images/home/childs-progress.png" alt=""></div>
+                                    <img class="lazy" data-src="{{ asset('frontend/update-design') }}/assets/images/home/childs-progress-cover.png" alt="">
+                                    <div class="clilds_progress_contents_left_img"><img class="lazy" data-src="{{ asset('frontend/update-design') }}/assets/images/home/childs-progress.png" alt=""></div>
                                 </div>
                                 <div class="clilds_progress_contents_right">
                                     <h4>Distance Won’t Stop Your Child’s Progress</h4>
@@ -222,7 +220,7 @@
                                     <p>Our online programs cover Primary, Secondary, GCSE, A-Level, and 11+ preparation, tailored to fit each student’s individual needs.</p>
                                     <a href="#" class="btn_style3">View Details</a>
                                 </div>
-                                <div class="clilds_progress_contents_arrow"><a href="#"><img src="{{ asset('frontend/update-design') }}/assets/images/home/cpc-btn-icon.png" alt=""></a></div>
+                                <div class="clilds_progress_contents_arrow"><a href="#"><img class="lazy" data-src="{{ asset('frontend/update-design') }}/assets/images/home/cpc-btn-icon.png" alt=""></a></div>
                                 <div class="cpc_round_main"><div class="cpc_round"></div></div>
                                 <div class="cpc_round_main cpc_round_main2"><div class="cpc_round"></div></div>
                             </div>
