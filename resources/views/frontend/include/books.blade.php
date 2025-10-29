@@ -17,7 +17,7 @@
 
 
                                 <div class="our_featured_products_single">
-                                    <img src="{{ asset('/'.$resources->thumbnail_image) }}" alt="">
+                                    <img src="{{ asset('core/public/'.$resources->thumbnail_image) }}" alt="">
                                     <p>{{ $resources->title }}</p>
                                     <h4>£ {{ $resources->price }} </h4>
                                     <a href="{{$resources->purchase_link}}">View Product</a>
