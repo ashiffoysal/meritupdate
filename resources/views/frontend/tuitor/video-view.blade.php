@@ -9,31 +9,15 @@
     padding-bottom: 50px;
 }
 .main-navbar .navbar .navbar-nav .nav-item a i {
-  
-    top: 0px !important; 
- 
+
+    top: 0px !important;
+
 }
 span.btn {
     font-size: 9px !important;
 }
 </style>
-<div class="page-banner-area">
-    <div class="d-table">
-        <div class="d-table-cell">
-            <div class="container">
-                <div class="page-banner-content">
-                    <h2>Dashboard</h2>
-                    <ul>
-                        <li>
-                            <a href="{{ url('/') }}">Home</a>
-                        </li>
-                        <li>Video Tutorial</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+
 <style>
     aside#layout-menu {
     margin: 15px 0px 0px 50px;
@@ -74,14 +58,14 @@ span.btn {
    @include('frontend.student.include.tutorcss')
 
     <!-- Layout wrapper -->
-    <div class="layout-wrapper layout-content-navbar" style="padding-top:20px">
+    <div class="layout-wrapper layout-content-navbar" style="padding-top:220px">
       <div class="layout-container">
         <!-- Menu -->
 
         <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme" style="position: relative;">
           <div class="app-brand demo">
             <a href="{{ url('/') }}" class="app-brand-link">
-              
+
             </a>
 
             <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
@@ -109,26 +93,26 @@ span.btn {
 
             <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
               <!-- Search -->
-             
-               
+
+
               <div class="navbar-nav align-items-center">
                 <div class="nav-item d-flex align-items-center">
-                  
+
                 @include('frontend.student.include.headernotify')
-                
+
                 </div>
               </div>
               <!-- /Search -->
 
               <ul class="navbar-nav flex-row align-items-center ms-auto">
-                
+
                 @include('frontend.student.include.dasboardheader')
-                
+
               </ul>
             </div>
           </nav>
-          
-         
+
+
 
           <!-- / Navbar -->
 
@@ -140,12 +124,12 @@ span.btn {
                 <!---->
                  <div class="card mt-1">
                     <h5 class="card-header">Watch Video</h5>
-                             
+
                     <div class="card-body">
                          <div class="row">
                             <div class="col-md-12">
-                                
-                                
+
+
                                 <div class="video-container">
         <video id="myVideo" src="{{ asset('/'.$view->video_path) }}"></video>
         <div class="controls">
@@ -160,7 +144,7 @@ span.btn {
         const playBtn = document.getElementById('playBtn');
         const pauseBtn = document.getElementById('pauseBtn');
         const watchTime = document.getElementById('watchTime');
-        
+
         let totalWatched = 0;
         let watchTracker;
 
@@ -185,14 +169,14 @@ span.btn {
             alert(`You watched a total of ${totalWatched} seconds.`);
         });
     </script>
-                                
+
                                 <!--<video width="100%" height="100%">-->
                                 <!--  <source src="{{ asset('/'.$view->video_path) }}" type="video/mp4">-->
-                                
+
                                 <!--</video>-->
-                                
-                          
-                                                    
+
+
+
                             </div>
                         </div>
                     </div>
@@ -200,7 +184,7 @@ span.btn {
                <!--end-->
                 </div>
             <!-- / Content -->
-      
+
 
             <div class="content-backdrop fade"></div>
           </div>
@@ -229,7 +213,7 @@ span.btn {
         const $watchTime = $('#watchTime');
         const videoId = "{{ $view->id }}";
         const totalvideolength ="{{ $view->total_time }}";
-        
+
         let totalWatched = 0;
         let watchTracker;
 
@@ -246,7 +230,7 @@ span.btn {
                         url: '/get/video/tutorial/watch',
                         method: 'POST',
                         headers: {
-                            
+
                             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                         },
                         contentType: 'application/json',
@@ -282,4 +266,3 @@ span.btn {
 
 
 @endsection
-

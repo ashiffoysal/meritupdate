@@ -8,31 +8,15 @@
     padding-bottom: 50px;
 }
 .main-navbar .navbar .navbar-nav .nav-item a i {
-  
-    top: 0px !important; 
- 
+
+    top: 0px !important;
+
 }
 span.btn {
     font-size: 9px !important;
 }
 </style>
-<div class="page-banner-area">
-    <div class="d-table">
-        <div class="d-table-cell">
-            <div class="container">
-                <div class="page-banner-content">
-                    <h2>Dashboard</h2>
-                    <ul>
-                        <li>
-                            <a href="{{ url('/') }}">Home</a>
-                        </li>
-                        <li>Dashboard</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+
 <style>
     aside#layout-menu {
     margin: 15px 0px 0px 50px;
@@ -44,14 +28,14 @@ span.btn {
    @include('frontend.student.include.tutorcss')
 
     <!-- Layout wrapper -->
-    <div class="layout-wrapper layout-content-navbar" style="padding-top:20px">
+    <div class="layout-wrapper layout-content-navbar" style="padding-top:220px">
       <div class="layout-container">
         <!-- Menu -->
 
         <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme" style="position: relative;">
           <div class="app-brand demo">
             <a href="{{ url('/') }}" class="app-brand-link">
-              
+
             </a>
 
             <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
@@ -79,26 +63,26 @@ span.btn {
 
             <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
               <!-- Search -->
-             
-               
+
+
               <div class="navbar-nav align-items-center">
                 <div class="nav-item d-flex align-items-center">
-                  
+
                 @include('frontend.student.include.headernotify')
-                
+
                 </div>
               </div>
               <!-- /Search -->
 
               <ul class="navbar-nav flex-row align-items-center ms-auto">
-                
+
                 @include('frontend.student.include.dasboardheader')
-                
+
               </ul>
             </div>
           </nav>
-          
-         
+
+
 
           <!-- / Navbar -->
 
@@ -115,7 +99,7 @@ span.btn {
                                     <a href="{{ url('/tutor/articals') }}" class="btn-sm btn-success">Add Article</a>
                                     </div>
                                 </div>
-                    
+
                     <div class="card-body">
                          <div class="row">
                             <div class="col-md-12">
@@ -131,7 +115,7 @@ span.btn {
                                     </tr>
                                 </thead>
                                     <tbody>
-                                       
+
                                         @foreach($alldata as $key => $data)
                                         <tr>
                                             <th scope="row">{{ ++$key }}</th>
@@ -148,18 +132,18 @@ span.btn {
                                                 @endif
                                             </td>
                                             <td>
-                                            
+
                                                 <a href="{{ url('/tutor/articals/edit/'.$data->id) }}" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-pencil"></i></a>
-                                           
+
                                                 <a href="{{ url('/tutor/articals/delete/'.$data->id) }} }}" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fa fa-times"></i></a>
-                                                
+
                                             </td>
                                         </tr>
                                         @endforeach
-                                        
+
                                     </tbody>
                                 </table>
-                                                    
+
                             </div>
                         </div>
                     </div>
@@ -167,7 +151,7 @@ span.btn {
                <!--end-->
                 </div>
             <!-- / Content -->
-      
+
 
             <div class="content-backdrop fade"></div>
           </div>

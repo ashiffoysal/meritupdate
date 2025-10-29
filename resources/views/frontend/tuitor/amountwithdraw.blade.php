@@ -9,31 +9,15 @@
     padding-bottom: 50px;
 }
 .main-navbar .navbar .navbar-nav .nav-item a i {
-  
-    top: 0px !important; 
- 
+
+    top: 0px !important;
+
 }
 span.btn {
     font-size: 9px !important;
 }
 </style>
-<div class="page-banner-area">
-    <div class="d-table">
-        <div class="d-table-cell">
-            <div class="container">
-                <div class="page-banner-content">
-                    <h2>Dashboard</h2>
-                    <ul>
-                        <li>
-                            <a href="{{ url('/') }}">Home</a>
-                        </li>
-                        <li>Dashboard</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+
 <style>
     aside#layout-menu {
     margin: 15px 0px 0px 50px;
@@ -45,14 +29,14 @@ span.btn {
    @include('frontend.student.include.tutorcss')
 
     <!-- Layout wrapper -->
-    <div class="layout-wrapper layout-content-navbar" style="padding-top:20px">
+    <div class="layout-wrapper layout-content-navbar" style="padding-top:220px">
       <div class="layout-container">
         <!-- Menu -->
 
         <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme" style="position: relative;">
           <div class="app-brand demo">
             <a href="{{ url('/') }}" class="app-brand-link">
-              
+
             </a>
 
             <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
@@ -80,21 +64,21 @@ span.btn {
 
             <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
               <!-- Search -->
-             
-               
+
+
               <div class="navbar-nav align-items-center">
                 <div class="nav-item d-flex align-items-center">
-                  
+
                 @include('frontend.student.include.headernotify')
-                
+
                 </div>
               </div>
               <!-- /Search -->
 
               <ul class="navbar-nav flex-row align-items-center ms-auto">
-                
+
                 @include('frontend.student.include.dasboardheader')
-                
+
               </ul>
             </div>
           </nav>
@@ -107,7 +91,7 @@ span.btn {
                <!--start-->
                <div class="card">
                     <h5 class="card-header">Account Balance: £ {{ $dabit_amount - $credit_amount }} </h5>
-                    
+
                     <div class="card-body">
                          <div class="content">
                                                         <h6>Withdraw Request</h6>
@@ -135,7 +119,7 @@ span.btn {
                                                             <label for="exampleFormControlInput1">Account Number <span style="color:red">*</span></label>
                                                             <input type="text" class="form-control" name="account_number" required id="exampleFormControlInput1" placeholder="">
                                                           </div>
-                                                          
+
                                                           <div class="form-group mb-3">
                                                             <label for="exampleFormControlTextarea1">Sort Code<span style="color:red">*</span></label>
                                                             <textarea class="form-control" id="exampleFormControlTextarea1" required name="account_address" rows="3"></textarea>
@@ -144,14 +128,14 @@ span.btn {
                                                             <button type="submit" class="btn-sm btn-success"> Submit</button>
                                                           </div>
                                                         </form>
-                        
+
                     </div>
                 </div>
-                
+
                 <!---->
                  <div class="card mt-5">
                     <h5 class="card-header"></h5>
-                    
+
                     <div class="card-body">
                          <div class="row">
                             <div class="col-md-12">
@@ -192,7 +176,7 @@ span.btn {
                <!--end-->
                 </div>
             <!-- / Content -->
-      
+
 
             <div class="content-backdrop fade"></div>
           </div>
@@ -219,13 +203,13 @@ span.btn {
                      type:"GET",
                      data:'json',
                      success:function(data) {
-                      
+
                            $('#subject').empty();
                         $('#subject').append(' <option disabled >Select</option>');
                         $.each(data,function(index,districtObj){
                          $('#subject').append('<option value="' + districtObj.id + '">'+districtObj.name+'</option>');
                        });
-    
+
                     }
                  });
              } else {
@@ -239,7 +223,7 @@ span.btn {
     function addsubject(){
         var subject_id=$("#subject").val();
         var level_id=$("#level").val();
-       
+
         if(subject_id==null){
             alert("Please Select Subject!!");
         }else{
@@ -247,7 +231,7 @@ span.btn {
                  $.ajax({
                      url: "{{  url('/get/subject/subject/submit') }}",
                      type:"GET",
-                     
+
                      data:{
                          'subject_id':subject_id,
                          'level_id':level_id,
@@ -255,14 +239,14 @@ span.btn {
                      success:function(data) {
                         if(data=='ok'){
                             alert('This Subject Already Created');
-                           
+
                         }else if(data=='no'){
                             getallsubject();
                               alert('success');
-                            
+
                         }
-                         
-    
+
+
                     }
                  });
              } else {
@@ -279,7 +263,7 @@ span.btn {
              type:"GET",
              data:'json',
              success:function(data) {
-                
+
                  $("#maindata").html(data);
 
             }

@@ -8,31 +8,15 @@
     padding-bottom: 50px;
 }
 .main-navbar .navbar .navbar-nav .nav-item a i {
-  
-    top: 0px !important; 
- 
+
+    top: 0px !important;
+
 }
 span.btn {
     font-size: 9px !important;
 }
 </style>
-<div class="page-banner-area">
-    <div class="d-table">
-        <div class="d-table-cell">
-            <div class="container">
-                <div class="page-banner-content">
-                    <h2>Dashboard</h2>
-                    <ul>
-                        <li>
-                            <a href="{{ url('/') }}">Home</a>
-                        </li>
-                        <li>Dashboard</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+
 <style>
     aside#layout-menu {
     margin: 15px 0px 0px 50px;
@@ -44,14 +28,14 @@ span.btn {
    @include('frontend.student.include.tutorcss')
 
     <!-- Layout wrapper -->
-    <div class="layout-wrapper layout-content-navbar" style="padding-top:20px">
+    <div class="layout-wrapper layout-content-navbar" style="padding-top:220px">
       <div class="layout-container">
         <!-- Menu -->
 
         <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme" style="position: relative;">
           <div class="app-brand demo">
             <a href="{{ url('/') }}" class="app-brand-link">
-              
+
             </a>
 
             <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
@@ -79,26 +63,26 @@ span.btn {
 
             <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
               <!-- Search -->
-             
-              
+
+
               <div class="navbar-nav align-items-center">
                 <div class="nav-item d-flex align-items-center">
-                  
+
                 @include('frontend.student.include.headernotify')
-                
+
                 </div>
               </div>
               <!-- /Search -->
 
               <ul class="navbar-nav flex-row align-items-center ms-auto">
-                
+
                 @include('frontend.student.include.dasboardheader')
-                
+
               </ul>
             </div>
           </nav>
-          
-         
+
+
 
           <!-- / Navbar -->
 
@@ -110,11 +94,11 @@ span.btn {
                 <!---->
                  <div class="card mt-2">
                     <h5 class="card-header">Your Video Presentation</h5>
-                    
+
                     <div class="card-body">
                          <div class="row">
                             <div class="col-md-12">
-                               
+
                                        <form action="{{ url('/user/video') }}" method="post" enctype="multipart/form-data">
                                                         @csrf
                                                     <div class="row">
@@ -138,7 +122,7 @@ span.btn {
                                                                     </div>
                                                                     @endif
                                                                 @else
-                                                                    
+
                                                                 @endif
                                                             </div>
                                                         </div>
@@ -164,8 +148,8 @@ span.btn {
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                    </form>           
-                                                   
+                                                    </form>
+
                             </div>
                         </div>
                     </div>
@@ -178,7 +162,7 @@ span.btn {
                 <!---->
                  <div class="card mt-2">
                     <h5 class="card-header">Video Summary</h5>
-                    
+
                     <div class="card-body">
                          <div class="row">
                             <div class="col-md-12">
@@ -196,7 +180,7 @@ span.btn {
                                                         @foreach($maindata as $data)
                                                             <tr>
                                                                 <td>Video
-                                                                    
+
                                                             </td>
                                                                 <td>{{$data->created_at}}</td>
                                                                 <td>
@@ -209,7 +193,7 @@ span.btn {
                                                                     @endif
                                                                 </td>
                                                                 <td><p style="font-size:10px">{{$data->more}}</p></td>
-                                                                
+
                                                                 <td>
                                                                     @if($data->is_approve==2)
                                                                     <a href="#"><i class="fa fa-trash"></i></a>
@@ -217,17 +201,17 @@ span.btn {
                                                                     </td>
                                                             </tr>
                                                         @endforeach
-                                                           
+
                                                         </tbody>
-                                                    </table>          
-                                                   
+                                                    </table>
+
                             </div>
                         </div>
                     </div>
                 </div>
                <!--end-->
                 </div>
-      
+
 
             <div class="content-backdrop fade"></div>
           </div>

@@ -8,31 +8,15 @@
     padding-bottom: 50px;
 }
 .main-navbar .navbar .navbar-nav .nav-item a i {
-  
-    top: 0px !important; 
- 
+
+    top: 0px !important;
+
 }
 span.btn {
     font-size: 9px !important;
 }
 </style>
-<div class="page-banner-area">
-    <div class="d-table">
-        <div class="d-table-cell">
-            <div class="container">
-                <div class="page-banner-content">
-                    <h2>Dashboard</h2>
-                    <ul>
-                        <li>
-                            <a href="{{ url('/') }}">Home</a>
-                        </li>
-                        <li>Dashboard</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+
 <style>
     aside#layout-menu {
     margin: 15px 0px 0px 50px;
@@ -44,14 +28,14 @@ span.btn {
    @include('frontend.student.include.tutorcss')
 
     <!-- Layout wrapper -->
-    <div class="layout-wrapper layout-content-navbar" style="padding-top:20px">
+    <div class="layout-wrapper layout-content-navbar" style="padding-top:220px">
       <div class="layout-container">
         <!-- Menu -->
 
         <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme" style="position: relative;">
           <div class="app-brand demo">
             <a href="{{ url('/') }}" class="app-brand-link">
-              
+
             </a>
 
             <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
@@ -79,25 +63,25 @@ span.btn {
 
             <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
               <!-- Search -->
-             
-            
+
+
               <div class="navbar-nav align-items-center">
                 <div class="nav-item d-flex align-items-center">
-                  
+
                 @include('frontend.student.include.headernotify')
-                
+
                 </div>
               </div>
               <!-- /Search -->
               <ul class="navbar-nav flex-row align-items-center ms-auto">
-                
+
                 @include('frontend.student.include.dasboardheader')
-                
+
               </ul>
             </div>
           </nav>
-          
-         
+
+
 
           <!-- / Navbar -->
 
@@ -117,10 +101,10 @@ span.btn {
                                                                 <th scope="col">MANAGE</th>
                                                             </tr>
                                                         </thead>
-                                                        
-                                                        
+
+
                                                         <tbody style="font-size:12px">
-                                                            
+
                                                             @if(Auth::user()->user_type==2)
                                                                 <tr>
                                                                 <td>Profile image</td>
@@ -173,7 +157,7 @@ span.btn {
                                                                 </td>
                                                                 <td><a href="{{ url('/user/proof-of-address') }}"><span class="btn">Upload Now</span></a></td>
                                                             </tr>
-                                                      
+
                                                             <tr>
                                                                 <td>Latest CV (PDF)</td>
                                                                 <td>
@@ -209,8 +193,8 @@ span.btn {
                                                                 </td>
                                                                 <td><a href="{{ url('/user/dbs-certification') }}"><span class="btn">Upload Now</span></a></td>
                                                             </tr>
-                                                        
-                                                         
+
+
                                                             @endif
                                                                 @if(Auth::user()->user_type==1)
                                                                         <tr>
@@ -248,7 +232,7 @@ span.btn {
                                                                 <td><a style="font-size:12px;" href="{{ url('/user/proof-of-address') }}"><span class="btn" style="font-size:12px;">Upload Now</span></a></td>
                                                             </tr>
                                                               @endif
-                                                            
+
                                                         </div>
                                                         </tbody>
                         </table>
@@ -286,7 +270,7 @@ span.btn {
                                                                     @endif
                                                                 </td>
                                                                 <td><p style="font-size:10px">{{$data->more}}</p></td>
-                                                                
+
                                                                 <td>
                                                                                  <a data-bs-toggle="modal" data-bs-target="#exampleModal" class="veri view" data-id="{{ $data->id }}" style="font-size:10px;" href="#">View</i></a>
                                                                     @if($data->is_verify !=1)
@@ -295,7 +279,7 @@ span.btn {
                                                                     </td>
                                                             </tr>
                                                         @endforeach
-                                                           
+
                                                         </tbody>
                         </table>
                       </div>
@@ -303,9 +287,9 @@ span.btn {
                   </div>
               </div>
               </div>
-           
+
             <!-- / Content -->
-      
+
 
             <div class="content-backdrop fade"></div>
           </div>
@@ -331,12 +315,12 @@ span.btn {
       <div class="modal-body">
         <p class="created_at"></p><br>
         <div class="image_section">
-            
+
         </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        
+
       </div>
     </div>
   </div>
@@ -346,7 +330,7 @@ span.btn {
 <script>
     $(document).ready(function(){
         $(".view").click(function(){
-            var id=$(this).data("id"); 
+            var id=$(this).data("id");
             $(".modal-title").empty();
             $(".created_at").empty();
             $(".image_section").empty();
@@ -356,22 +340,22 @@ span.btn {
                      type:"GET",
                      dataType:"json",
                      success:function(data) {
-                        
+
                         $(".modal-title").html(data.item_name);
                         $(".created_at").html(data.date);
-                        
+
                         if(data.image_type==1){
                             $(".image_section").append("<img src='{{asset('/')}}"+data.image+"' height='' width=''>");
                         }
                         if(data.image_type==2){
                             $(".image_section").append("<iframe src='{{asset('/')}}"+data.image+"' width='100%' height='700px'></iframe>");
                         }
-                        
-                        
-                       
-    
-                            
-    
+
+
+
+
+
+
                          }
                  });
              } else {

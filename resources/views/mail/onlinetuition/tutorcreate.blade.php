@@ -100,21 +100,12 @@
           </table>
         </td>
       </tr>
-      
+
       <tr>
         <td>
-          <h2
-            class="header"
-            style="
-              margin: 0;
-              color: #000;
-              font-size: 16px;
-              font-weight: 500;
-              padding-bottom: 30px;
-            "
-          >
-            Dear {{ $user['name'] }},
-          </h2>
+
+            <p style="margin: 0; color: #333; font-size: 22px; font-weight: 500">  Dear {{ $user['name'] }},
+            </p>
           <p style="margin: 0; color: #333; font-size: 15px; font-weight: 400">
             Please find attached the training materials and resource documents for your review. Kindly go through them, and you will also find a video tutorial included to support your preparation for online tuition.
           </p>
@@ -141,10 +132,10 @@
           <h3 style="font-size: 16px; font-weight: 600; margin: 20px 0 10px 0; color: #247e3d;">Login Details:</h3>
           <p style="margin: 0; font-size: 15px; color: #333;">
             ✉ Email: <strong>
-                
+
                  {{ $user['email'] }}
-                
-            
+
+
             </strong><br>
             🔑 Password: <strong>123456</strong> (If you’ve changed your password, please use the updated one instead.)
           </p>
@@ -217,16 +208,16 @@
             border-bottom: 1.5px solid #d9d9d9;
           "
         >
-          <a href="#" class="hover" style="margin: 0 2px; display: inline-block; border-radius: 50px">
+          <a href="{{ $social->facebook }}" class="hover" style="margin: 0 2px; display: inline-block; border-radius: 50px">
             <img src="https://i.postimg.cc/76KTDD41/facebook.png" alt="Facebook" width="34" />
           </a>
-          <a href="#" class="hover" style="margin: 0 2px; display: inline-block; border-radius: 50px">
+          <a href="{{ $social->instagram }}" class="hover" style="margin: 0 2px; display: inline-block; border-radius: 50px">
             <img src="https://i.postimg.cc/d3XkkBLL/instagram.png" alt="Instagram" width="34" />
           </a>
-          <a href="#" class="hover" style="margin: 0 2px; display: inline-block; border-radius: 50px">
+          <a href="{{ $social->twitter }}" class="hover" style="margin: 0 2px; display: inline-block; border-radius: 50px">
             <img src="https://i.postimg.cc/ZKByk1M3/x.png" alt="Twitter" width="34" />
           </a>
-          <a href="#" class="hover" style="margin: 0 2px; display: inline-block; border-radius: 50px">
+          <a href="{{ $social->linkend }}" class="hover" style="margin: 0 2px; display: inline-block; border-radius: 50px">
             <img src="https://i.postimg.cc/j2CnS9qp/linkedin.png" alt="LinkedIn" width="34" />
           </a>
         </td>
@@ -235,9 +226,9 @@
       <tr class="copyrightBottom">
         <td style="text-align: center; font-size: 12px; color: #888; padding: 0px">
           <p class="copyright" style="font-size: 11px; color: #000; margin-top: 18px; margin-bottom: 32px;">
-            &copy; 2025 Merit Tutors. All rights reserved.
+            &copy; {{ date('Y') }}  Merit Tutors. All rights reserved.
           </p>
-  
+
           <tr>
             <td style="text-align: center; padding: 0px">
               <a href="https://www.merittutors.co.uk/privacy-policy" style="color: #333333; font-size: 11px; text-decoration: underline; font-weight: 400;">Privacy policy</a>

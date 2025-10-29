@@ -67,7 +67,7 @@ Route::post('/user/crop-image-upload', [App\Http\Controllers\Frontend\DashboardC
 
 Route::post('/userLogin', [App\Http\Controllers\Frontend\UserLoginController::class, 'customLogin'])
     ->name('login.custom');
-    
+
 Route::get('/forget-password', [App\Http\Controllers\Frontend\UserLoginController::class, 'forgetpass'])
 ->name('login.forgetpass');
 
@@ -89,13 +89,13 @@ Route::post('forget/password-update/{email}/{id}', [App\Http\Controllers\Fronten
 
 
 
-    
+
 Route::get('/venue-hire', [App\Http\Controllers\Frontend\FrontendController::class, 'venueHire']);
 
-    
+
 Route::get('/get/school-details', [App\Http\Controllers\Frontend\FrontendController::class, 'schoolDetails']);
-    
-    
+
+
 Route::post('custom-registration', [App\Http\Controllers\Frontend\UserLoginController::class, 'customRegistration'])->name('register.custom');
 
 
@@ -111,7 +111,7 @@ Route::get('callback/google', [App\Http\Controllers\GoogleSocialiteController::c
 Route::get('auth/facebook', [App\Http\Controllers\FacebookSocialiteController::class, 'redirectToGoogle']);
 Route::get('callback/facebook', [App\Http\Controllers\FacebookSocialiteController::class, 'handleCallback']);
 
-// 
+//
 
 Route::get('admin/tutor/create', [App\Http\Controllers\Admin\TutorManageController::class, 'create']);
 
@@ -119,147 +119,77 @@ Route::post('admin/tutor/create', [App\Http\Controllers\Admin\TutorManageControl
 
 
 
+
+Route::get('admin/tuition-reources-index', [App\Http\Controllers\Admin\OnlineTuitionController::class, 'index'])->name('admin.tuition-resources');
+Route::get('admin/tuition-reources-create', [App\Http\Controllers\Admin\OnlineTuitionController::class, 'create'])->name('admin.tuition-resources-create');
+Route::post('admin/tuition-reources-create', [App\Http\Controllers\Admin\OnlineTuitionController::class, 'store']);
+Route::post('admin/tuition-reources-update', [App\Http\Controllers\Admin\OnlineTuitionController::class, 'update'])->name('admin.tuition-resources-update');
+Route::get('admin/tuition-reources-delete/{id}', [App\Http\Controllers\Admin\OnlineTuitionController::class, 'delete']);
+Route::get('admin/tuition-reources-edit/{id}', [App\Http\Controllers\Admin\OnlineTuitionController::class, 'edit']);
+
+
+
+
 Route::get('admin/book-purchase-list/delete/{id}', [App\Http\Controllers\Admin\AboutUsController::class, 'bookPurchaseListDelete']);
-
 Route::get('admin/book-purchase-list/details/{id}', [App\Http\Controllers\Admin\AboutUsController::class, 'bookPurchaseListDetails']);
-
 Route::post('admin/book-purchase-list/details/update', [App\Http\Controllers\Admin\AboutUsController::class, 'bookPurchaseListDetailsUpdate']);
-
 Route::get('admin/book-purchase-list', [App\Http\Controllers\Admin\AboutUsController::class, 'bookPurchaseList'])->name('admin.bookpurchase.list');
-
-
 Route::get('get/video/subcate/all/{cate_id}', [App\Http\Controllers\Admin\AboutUsController::class, 'getSubcate']);
-
 Route::get('admin/video-category/{cate_id}', [App\Http\Controllers\Admin\AboutUsController::class, 'allCategoryVideo']);
-
-
 Route::get('admin/video-subcategory/{subcate_id}', [App\Http\Controllers\Admin\AboutUsController::class, 'allSubCategoryVideo']);
-
-
-
 Route::get('/admin/staff-watch-video/category', [App\Http\Controllers\Admin\AboutUsController::class, 'staffVideoCategory'])->name('admin.staff-video.category');
-
 Route::get('/admin/staff-watch-video/subcategory/{cate_id}', [App\Http\Controllers\Admin\AboutUsController::class, 'staffVideoSubCategory']);
-
 Route::get('/admin/staff-watch-video/all/{subcate_id}', [App\Http\Controllers\Admin\AboutUsController::class, 'staffVideoAll']);
-
-
 Route::get('/admin/staff-watch-video/index', [App\Http\Controllers\Admin\AboutUsController::class, 'staffVideoRecord'])->name('admin.staff-video.index');
-
 Route::get('/admin/staff-watch-video/view/{id}', [App\Http\Controllers\Admin\AboutUsController::class, 'staffVideoView']);
-
 Route::post('/get/admin/video/tutorial/watch', [App\Http\Controllers\Admin\AboutUsController::class, 'staffVideoViewStore']);
 
-
-
-
 Route::get('/admin/watch-recored/index', [App\Http\Controllers\Admin\AboutUsController::class, 'tutorwatchrecord'])->name('admin.watch-recored.index');
-
-
 Route::get('/admin/watch-recored-for-admin/index/{id}', [App\Http\Controllers\Admin\AboutUsController::class, 'watchrecordforadmin'])->name('admin.watchrecordforadmin.index');
-
 Route::get('admin/watch-video/tutor/list/{id}', [App\Http\Controllers\Admin\AboutUsController::class, 'tutorwatchList']);
-
-
-
-
-
-
 Route::get('/admin/tutorial-video/create', [App\Http\Controllers\Admin\AboutUsController::class, 'adminVideoCreare'])->name('admin.adminvideo.create');
-
-
-
-
-
-
 Route::post('/admin/tutorial-video/create', [App\Http\Controllers\Admin\AboutUsController::class, 'adminVideoStore'])->name('admin.adminvideo.create');
-
-
 Route::post('/admin/tutorial-video/update', [App\Http\Controllers\Admin\AboutUsController::class, 'adminVideoUpdate'])->name('admin.adminvideo.update');
-
 Route::get('/admin/tutorial-video/index', [App\Http\Controllers\Admin\AboutUsController::class, 'adminVideoIndex'])->name('admin.adminvideo.index');
-
 Route::get('/admin/tutorial-video/edit/{id}', [App\Http\Controllers\Admin\AboutUsController::class, 'adminVideoEdit']);
-
 Route::get('/admin/tutorial-video/active/{id}', [App\Http\Controllers\Admin\AboutUsController::class, 'adminVideoActive']);
-
 Route::get('/admin/tutorial-video/deactive/{id}', [App\Http\Controllers\Admin\AboutUsController::class, 'adminVideoDeactive']);
-
 Route::get('/admin/tutorial-video/delete/{id}', [App\Http\Controllers\Admin\AboutUsController::class, 'adminVideoDelete']);
-
-
-
-
-// 
-
+//
 Route::get('/admin/apply-candidate/index', [App\Http\Controllers\Admin\AboutUsController::class, 'applycandidate'])->name('admin.applycandidate.candidate');
-
 Route::get('/admin/apply-candidate/details/{id}', [App\Http\Controllers\Admin\AboutUsController::class, 'applyCandidateDetails']);
-
 Route::get('/admin/apply-candidate/delete/{id}', [App\Http\Controllers\Admin\AboutUsController::class, 'applycandidateDelete']);
-
-
-
 Route::get('/quick-inquiry', [App\Http\Controllers\Frontend\FrontendController::class, 'quickEnquiry']);
-
 Route::post('/quick-inquiry', [App\Http\Controllers\Frontend\FrontendController::class, 'quickEnquirySubmit']);
-
-
 Route::get('/', [App\Http\Controllers\Frontend\FrontendController::class, 'home']);
-
-
 Route::get('/apps', [App\Http\Controllers\Frontend\FrontendController::class, 'apps']);
-
 Route::get('/summer-school-application', [App\Http\Controllers\Frontend\FrontendController::class, 'summerSchoolApplication']);
-
 Route::post('/summer-school-application', [App\Http\Controllers\Frontend\FrontendController::class, 'summerSchoolApplicationSubmit']);
-
-
 Route::get('/summer-maths-competition', [App\Http\Controllers\Frontend\FrontendController::class, 'summerMathsCompetition']);
-
-
-
-
 Route::get('/gcse-results', [App\Http\Controllers\Frontend\FrontendController::class, 'gcsemeritResults']);
-
 Route::get('/a-level-results', [App\Http\Controllers\Frontend\FrontendController::class, 'alevelmeritResults']);
 // new url
-
 Route::get('/11-plus-april-holidays', [App\Http\Controllers\Frontend\FrontendController::class, 'elevenPlusApril']);
-
 Route::get('/11-plus-summer-holidays', [App\Http\Controllers\Frontend\FrontendController::class, 'elevenPlusSummer']);
-
 Route::get('/11-plus-school-list', [App\Http\Controllers\Frontend\FrontendController::class, 'elevenPlusSchoolList']);
-
-
-
 Route::get('/mock-exam-booking', [App\Http\Controllers\Frontend\FrontendController::class, 'mockExam']);
 Route::post('/mock-exam-booking', [App\Http\Controllers\Frontend\FrontendController::class, 'mockExamStore']);
-
 Route::get('/exam-centre-london', [App\Http\Controllers\Frontend\FrontendController::class, 'examCentre']);
 
 
-
-
 Route::get('/work-for-merit-tutors', [App\Http\Controllers\Frontend\FrontendController::class, 'worksformerittutors']);
-
 Route::post('/work-for-merit-tutors', [App\Http\Controllers\Frontend\FrontendController::class, 'worksformerittutorstore']);
-
 Route::get('/apply-success', [App\Http\Controllers\Frontend\FrontendController::class, 'applysuccess']);
 
 // new url end
 Route::get('/filter-shop', [App\Http\Controllers\Frontend\FrontendController::class, 'filter_shop']);
-
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/admin', [App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('admin.home');
 Route::get('/admin/profile', [App\Http\Controllers\Admin\DashboardController::class, 'adminProfile'])->name('admin.profile');
 Route::get('/admin/profile-update', [App\Http\Controllers\Admin\DashboardController::class, 'adminProfileUpdate'])->name('admin.ProfileUpdate');
 Route::post('/admin/profile-update', [App\Http\Controllers\Admin\DashboardController::class, 'adminProfileUpdateSubmit'])->name('admin.ProfileUpdate');
-
 Route::post('/admin/admin-update-password', [App\Http\Controllers\Admin\DashboardController::class, 'adminUpdatePassword'])->name('admin.adminUpdatePassword');
-
 Route::post('/admin/email-update', [App\Http\Controllers\Admin\DashboardController::class, 'adminEmailUpdate'])->name('admin.email.update');
-
 Route::get('/admin/logout', [App\Http\Controllers\Admin\DashboardController::class, 'logout'])->name('admin.logout');
 // login controler
 Route::get('/admin/login', [App\Http\Controllers\Admin\LoginController::class, 'login'])->name('admin.login');
@@ -287,7 +217,7 @@ Route::get('/admin/slider/active/{id}', [App\Http\Controllers\Admin\SliderContro
 Route::get('/admin/slider/deactive/{id}', [App\Http\Controllers\Admin\SliderController::class, 'deactive']);
 Route::get('/admin/slider/edit/{id}', [App\Http\Controllers\Admin\SliderController::class, 'edit']);
 Route::get('/admin/slider/delete/{id}', [App\Http\Controllers\Admin\SliderController::class, 'delete']);
-// admin user 
+// admin user
 
 Route::get('/admin/admin-user/index', [App\Http\Controllers\Admin\AdminController::class, 'index'])->name('admin.admin-user.index');
 Route::get('/admin/admin-user/create', [App\Http\Controllers\Admin\AdminController::class, 'create'])->name('admin.admin-user.create');
@@ -297,58 +227,30 @@ Route::post('/admin/admin-user/update', [App\Http\Controllers\Admin\AdminControl
 Route::get('/admin/admin-user/edit/{id}', [App\Http\Controllers\Admin\AdminController::class, 'edit']);
 Route::get('/admin/admin-user/delete/{id}', [App\Http\Controllers\Admin\AdminController::class, 'delete']);
 //Merit Resource
-
-
 Route::get('/admin/resources/create', [App\Http\Controllers\Admin\MeritResourceController::class, 'create'])->name('admin.resources.create');
 Route::post('/admin/resources/create', [App\Http\Controllers\Admin\MeritResourceController::class, 'store'])->name('admin.resources.create');
 Route::get('/admin/resources/index', [App\Http\Controllers\Admin\MeritResourceController::class, 'index'])->name('admin.resources.index');
-
 Route::get('/admin/resources/active/{id}', [App\Http\Controllers\Admin\MeritResourceController::class, 'active']);
 Route::get('/admin/resources/deactive/{id}', [App\Http\Controllers\Admin\MeritResourceController::class, 'deactive']);
 Route::get('/admin/resources/edit/{id}', [App\Http\Controllers\Admin\MeritResourceController::class, 'edit']);
 Route::post('/admin/resources/update', [App\Http\Controllers\Admin\MeritResourceController::class, 'update']);
 Route::get('/admin/resources/delete/{id}', [App\Http\Controllers\Admin\MeritResourceController::class, 'delete']);
-
 Route::get('get/admin/subcategory/{id}', [App\Http\Controllers\Admin\MeritResourceController::class, 'getSubcategory']);
-
-
-
-
-
 // about us
 Route::get('/admin/about-us/update', [App\Http\Controllers\Admin\AboutUsController::class, 'update'])->name('admin.about-us.update');
 Route::post('/admin/about-us/update', [App\Http\Controllers\Admin\AboutUsController::class, 'updateSubmit'])->name('admin.about-us.update');
 Route::get('/privacy-policy', [App\Http\Controllers\Frontend\FrontendController::class, 'privacyPolicy']);
-
 Route::get('/terms-conditions', [App\Http\Controllers\Frontend\FrontendController::class, 'termsCondition']);
 Route::get('/terms-conditions-tutors', [App\Http\Controllers\Frontend\FrontendController::class, 'termsConditionTutors']);
 Route::get('/terms-conditions-home-tutoring', [App\Http\Controllers\Frontend\FrontendController::class, 'termsConditionhometutoring']);
-
 Route::get('/terms-conditions-online-tutoring', [App\Http\Controllers\Frontend\FrontendController::class, 'termsConditiononlinetutoring']);
-
 Route::get('/terms-conditions-onsite-tutoring', [App\Http\Controllers\Frontend\FrontendController::class, 'termsConditiononsitetutoring']);
-
 Route::get('/faq', [App\Http\Controllers\Frontend\FrontendController::class, 'faq']);
-
-
 Route::get('/merittutors-resources', [App\Http\Controllers\Frontend\FrontendController::class, 'allresources']);
 Route::get('/merittutors-resources/details/{id}/{sku}', [App\Http\Controllers\Frontend\FrontendController::class, 'Detailsresources']);
-
-
-
-
-
-
-
-
-
-
-
-
 Route::get('/admin/privacy-policy/update', [App\Http\Controllers\Admin\AboutUsController::class, 'privacyPolicy'])->name('admin.privacy-policy.update');
 // terms and conditions
 Route::get('/admin/terms-conditions/update', [App\Http\Controllers\Admin\AboutUsController::class, 'termsCondition'])->name('admin.terms-conditions.update');
-
 // category
 Route::get('/admin/category/create', [App\Http\Controllers\Admin\CategoryController::class, 'create'])->name('admin.category.create');
 Route::post('/admin/category/create', [App\Http\Controllers\Admin\CategoryController::class, 'store'])->name('admin.category.create');
@@ -358,17 +260,11 @@ Route::get('/admin/category/active/{id}', [App\Http\Controllers\Admin\CategoryCo
 Route::get('/admin/category/deactive/{id}', [App\Http\Controllers\Admin\CategoryController::class, 'deactive']);
 Route::get('/admin/category/edit/{id}', [App\Http\Controllers\Admin\CategoryController::class, 'edit']);
 Route::get('/admin/category/delete/{id}', [App\Http\Controllers\Admin\CategoryController::class, 'delete']);
-
-
 Route::get('/admin/contactmessage/index', [App\Http\Controllers\Admin\ContactMessageController::class, 'index'])->name('admin.contactmessage.index');
 Route::get('/admin/contactmessage/view/{id}', [App\Http\Controllers\Admin\ContactMessageController::class, 'videmessage']);
 Route::post('/admin/contactmessage/view/{id}', [App\Http\Controllers\Admin\ContactMessageController::class, 'replymessage']);
-
-
-
 Route::get('/admin/contactmessage/delete/{id}', [App\Http\Controllers\Admin\ContactMessageController::class, 'delete']);
 // blog controller
-
 Route::get('/admin/blog/create', [App\Http\Controllers\Admin\BlogController::class, 'create'])->name('admin.blog.create');
 Route::post('/admin/blog/create', [App\Http\Controllers\Admin\BlogController::class, 'store'])->name('admin.blog.create');
 Route::get('/admin/blog/index', [App\Http\Controllers\Admin\BlogController::class, 'index'])->name('admin.blog.index');
@@ -398,7 +294,7 @@ Route::get('/admin/review/index', [App\Http\Controllers\Admin\ReviewController::
 Route::get('/admin/review/edit/{id}', [App\Http\Controllers\Admin\ReviewController::class, 'edit']);
 Route::get('/admin/review/delete/{id}', [App\Http\Controllers\Admin\ReviewController::class, 'delete']);
 Route::post('/admin/review/update', [App\Http\Controllers\Admin\ReviewController::class, 'update'])->name('admin.review.update');
-// 
+//
 Route::get('/admin/gallery/create', [App\Http\Controllers\Admin\GalleryControlller::class, 'create'])->name('admin.gallery.create');
 Route::post('/admin/gallery/create', [App\Http\Controllers\Admin\GalleryControlller::class, 'store'])->name('admin.gallery.create');
 Route::get('/admin/gallery/index', [App\Http\Controllers\Admin\GalleryControlller::class, 'index'])->name('admin.gallery.index');
@@ -408,17 +304,11 @@ Route::post('/admin/gallery/update', [App\Http\Controllers\Admin\GalleryControll
 Route::get('/admin/gallery/active/{id}', [App\Http\Controllers\Admin\GalleryControlller::class, 'active']);
 
 Route::get('/admin/gallery/deactive/{id}', [App\Http\Controllers\Admin\GalleryControlller::class, 'deactive']);
-
 Route::get('/admin/result/create', [App\Http\Controllers\Admin\GalleryControlller::class, 'resultCreate']);
-
 Route::get('/admin/result/delete/{id}', [App\Http\Controllers\Admin\GalleryControlller::class, 'resultDelete']);
-
 Route::post('/admin/result/create', [App\Http\Controllers\Admin\GalleryControlller::class, 'resultStore']);
-
 Route::get('/admin/result/index', [App\Http\Controllers\Admin\GalleryControlller::class, 'resultIndex']);
-
 Route::get('/admin/result/edit/{id}', [App\Http\Controllers\Admin\GalleryControlller::class, 'resultEdit']);
-
 Route::post('/admin/result/update', [App\Http\Controllers\Admin\GalleryControlller::class, 'resultUpdate']);
 
 
@@ -426,109 +316,55 @@ Route::post('/admin/result/update', [App\Http\Controllers\Admin\GalleryControlll
 
 
 Route::get('/admin/summer-school/index', [App\Http\Controllers\Admin\AssesmentController::class, 'summerSchoolProgram'])->name('admin.summerschool.index');
-
-
-
 Route::get('/admin/maths-competition/index', [App\Http\Controllers\Admin\AssesmentController::class, 'summerMathscompetition'])->name('admin.mathscompetition.index');
-
-
 // assesment list
-
-
-
-
-
-
 Route::get('/admin/assesment/index', [App\Http\Controllers\Admin\AssesmentController::class, 'index'])->name('admin.assesment.index');
-
 Route::get('/admin/assesment/active/{id}', [App\Http\Controllers\Admin\AssesmentController::class, 'active']);
 Route::get('/admin/assesment/deactive/{id}', [App\Http\Controllers\Admin\AssesmentController::class, 'deactive']);
 Route::get('/admin/assesment/details/{id}', [App\Http\Controllers\Admin\AssesmentController::class, 'details']);
 Route::get('/admin/assesment/delete/{id}', [App\Http\Controllers\Admin\AssesmentController::class, 'delete']);
 // student request
-
 Route::get('/admin/student-request/index', [App\Http\Controllers\Admin\StudentTutorRequestController::class, 'index'])->name('admin.student-request.index');
 Route::get('/admin/student-request/delete/{id}', [App\Http\Controllers\Admin\StudentTutorRequestController::class, 'delete']);
 Route::get('/admin/student-request/view/{id}', [App\Http\Controllers\Admin\StudentTutorRequestController::class, 'view']);
 Route::post('/admin/student-request/approve', [App\Http\Controllers\Admin\StudentTutorRequestController::class, 'approve']);
 Route::get('/admin/assign-tutor/index', [App\Http\Controllers\Admin\StudentTutorRequestController::class, 'assigntutor'])->name('admin.assign-tutor.index');
-
-
 // bnner
 Route::get('/admin/banner/update', [App\Http\Controllers\Admin\BannerController::class, 'bannerupdate'])->name('admin.banner.update');
 Route::post('/admin/banner/update', [App\Http\Controllers\Admin\BannerController::class, 'update'])->name('admin.banner.update');
-
 // tutor manage
-
-
 Route::get('/admin/tutor/list', [App\Http\Controllers\Admin\TuitorController::class, 'index'])->name('admin.tutor.list');
-
 Route::get('/admin/tutor/shortlisted', [App\Http\Controllers\Admin\TuitorController::class, 'shortlistedtutor'])->name('admin.tutor.shortlist');
-
 Route::get('/admin/tutor/reference-details/{id}', [App\Http\Controllers\Admin\TuitorController::class, 'referencedetails']);
-
-
-
-
 Route::get('/admin/tutor/addshortlisted/{id}', [App\Http\Controllers\Admin\TuitorController::class, 'addshortlistedtutor']);
 Route::get('/admin/tutor/removeshortlisted/{id}', [App\Http\Controllers\Admin\TuitorController::class, 'removeshortlistedtutor']);
-
-
-
-// 
+//
 Route::get('/admin/approve-tutor/list', [App\Http\Controllers\Admin\TuitorController::class, 'approvetutor'])->name('admin.approvetutor.list');
 Route::get('/admin/reject-tutor/list', [App\Http\Controllers\Admin\TuitorController::class, 'rejectetutor'])->name('admin.rejecttutor.list');
-
 Route::get('/admin/pending-tutor/list',[App\Http\Controllers\Admin\TuitorController::class, 'pendingtutor'])->name('admin.pendingtutor.list');
-
 Route::get('/admin/archive-tutor/list', [App\Http\Controllers\Admin\TuitorController::class, 'archivetutor'])->name('admin.archivetutor.list');
-
 Route::get('/admin/archive/tutor/{id}', [App\Http\Controllers\Admin\TuitorController::class, 'tutorarchive']);
 Route::get('/admin/removearchive/tutor/{id}', [App\Http\Controllers\Admin\TuitorController::class, 'tutorremovearchive']);
-
-
-
-// 
-
-
-
+//
 Route::get('/admin/branchtutor/list', [App\Http\Controllers\Admin\TuitorController::class, 'branchtutor'])->name('admin.branchtutor.list');
 Route::get('/admin/tutor/details/{id}', [App\Http\Controllers\Admin\TuitorController::class, 'details']);
 Route::get('/admin/tutor/delete/{id}', [App\Http\Controllers\Admin\TuitorController::class, 'delete']);
-
 Route::get('/admin/tutor/approve/{id}', [App\Http\Controllers\Admin\TuitorController::class, 'approve']);
 Route::get('/admin/tutor/reject/{id}', [App\Http\Controllers\Admin\TuitorController::class, 'reject']);
-
 Route::get('/admin/tutor/education-details/{id}', [App\Http\Controllers\Admin\TuitorController::class, 'educationdetails']);
 
-
-
-
 Route::get('/admin/tutor/video-presentation/{id}', [App\Http\Controllers\Admin\TuitorController::class, 'videodetails']);
-
 Route::post('/admin/tutor/video-presentation/{id}', [App\Http\Controllers\Admin\TuitorController::class, 'videodetailsstatus']);
-
-
-
 Route::post('/admin/tutor/education-details/{id}', [App\Http\Controllers\Admin\TuitorController::class, 'educationdetailsstatus']);
 Route::get('/admin/tutor/cv-details/{id}', [App\Http\Controllers\Admin\TuitorController::class, 'cvdetails']);
 Route::get('/admin/tutor/history-details/{id}', [App\Http\Controllers\Admin\TuitorController::class, 'history']);
-
-
 Route::get('/admin/tutor/paymentrequest-history/{id}', [App\Http\Controllers\Admin\TuitorController::class, 'paymentrequesthistory']);
-
 Route::get('/admin/tutor/paymentrequest-approve/{id}/{tutor_id}', [App\Http\Controllers\Admin\TuitorController::class, 'paymentrequestapprove']);
-
 Route::post('/admin/tutor/paymentrequest-approve/{id}/{tutor_id}', [App\Http\Controllers\Admin\TuitorController::class, 'paymentrequststore']);
-
-
 // payment request
 Route::get('/admin/tutor/payment-request', [App\Http\Controllers\Admin\TuitorController::class, 'paymentrequest'])->name('admin.tutior.paymentrequest');
-
 Route::get('/admin/payment-request/delete/{id}', [App\Http\Controllers\Admin\TuitorController::class, 'paymentrequestdelete']);
-
 Route::get('/admin/payment-request/reject/{id}', [App\Http\Controllers\Admin\TuitorController::class, 'paymentrequestreject']);
-
 Route::get('/admin/verification/update', [App\Http\Controllers\Admin\TuitorController::class, 'verificationupdate']);
 Route::get('/admin/tutoreducation/update', [App\Http\Controllers\Admin\TuitorController::class, 'educationverifyupdate']);
 // student/Gurdian
@@ -546,21 +382,13 @@ Route::get('/admin/payment/pay', [App\Http\Controllers\Admin\PaymentController::
 // mail send/notify
 Route::get('/admin/user/notify/{id}', [App\Http\Controllers\Admin\MailSendController::class, 'create']);
 Route::post('/admin/user/notify/{id}', [App\Http\Controllers\Admin\MailSendController::class, 'store']);
-
-
 Route::get('/admin/notify/index', [App\Http\Controllers\Admin\MailSendController::class, 'mainindex'])->name('admin.notify.tutor');
-
-
-
-
-
 //Frontend Catagory wise product
 Route::get('/category/{slug}/{id}', [App\Http\Controllers\Frontend\FrontendCatagoryController::class, 'catagoryView']);
 Route::get('/products/{slug}/{id}', [App\Http\Controllers\Frontend\ProductController::class, 'details']);
-
 //Subcategory wise product
 Route::get('/subcategory/{slug}/{id}', [App\Http\Controllers\Frontend\FrontendSubCategoryController::class, 'subCatagoryView']);
-//user dashboard 
+//user dashboard
 Route::get('/logout', [App\Http\Controllers\Frontend\DashboardController::class, 'logout']);
 // Route::get('/dashboard', [App\Http\Controllers\Frontend\DashboardController::class, 'dashboard']);
 Route::get('/tutor/information', [App\Http\Controllers\Frontend\DashboardController::class, 'tutorinformation']);
@@ -569,63 +397,30 @@ Route::get('/tutor/student-request-list/view/{id}', [App\Http\Controllers\Fronte
 Route::get('/tutor/student-request-list/accept/{id}', [App\Http\Controllers\Frontend\DashboardController::class, 'studentrequestlistaccept']);
 Route::get('get/tutor/studentrequestlist/reject/{id}', [App\Http\Controllers\Frontend\DashboardController::class, 'studentrequestlistreject']);
 Route::post('/tutor/student-request-list/reject', [App\Http\Controllers\Frontend\DashboardController::class, 'studentrejectRequest']);
-
 Route::post('/tutor/account', [App\Http\Controllers\Frontend\DashboardController::class, 'tutorprofileupdate']);
 Route::get('/tutor/account', [App\Http\Controllers\Frontend\DashboardController::class, 'tutor_account']);
 Route::get('/user/dbs-certification', [App\Http\Controllers\Frontend\DashboardController::class, 'dbscertification']);
-
-
-
-
-
 Route::get('/tutor/subject-create', [App\Http\Controllers\Frontend\DashboardController::class, 'subjectcreate']);
-
 Route::get('/get/subject/subject/submit', [App\Http\Controllers\Frontend\DashboardController::class, 'subjectsubmit']);
-
 Route::get('/get/allsubject/fromcontroller', [App\Http\Controllers\Frontend\DashboardController::class, 'getallsubject']);
 Route::get('/get/tutorsubject/delete/{bid}', [App\Http\Controllers\Frontend\DashboardController::class, 'gettutorsubjectdelete']);
-
 Route::get('/get/allsubject/bylevel/{level_id}', [App\Http\Controllers\Frontend\FrontendController::class, 'getsubject']);
-
 Route::get('/get-free-resources', [App\Http\Controllers\Frontend\FrontendController::class, 'getFreeResources']);
 Route::post('/get-free-resources', [App\Http\Controllers\Frontend\FrontendController::class, 'getFreeResourcesSubmit']);
-
-
-
 Route::get('/user/video', [App\Http\Controllers\Frontend\DashboardController::class, 'videosection']);
 Route::post('/user/video', [App\Http\Controllers\Frontend\DashboardController::class, 'videosectionStore']);
-
 Route::get('/user/proof-of-address', [App\Http\Controllers\Frontend\DashboardController::class, 'proofofaddress']);
 Route::post('/user/proof-of-address', [App\Http\Controllers\Frontend\DashboardController::class, 'proofofaddresssubmit']);
-
 Route::get('/user/id-verifications', [App\Http\Controllers\Frontend\DashboardController::class, 'idverification']);
 Route::post('/user/id-verifications', [App\Http\Controllers\Frontend\DashboardController::class, 'idverificationsubmit']);
-
-
-
 Route::post('/user/dbs-certification', [App\Http\Controllers\Frontend\DashboardController::class, 'dbscertificationsubmit']);
-
 Route::get('/user/verification', [App\Http\Controllers\Frontend\DashboardController::class, 'verification']);
 Route::get('/user/verification/delete/{id}', [App\Http\Controllers\Frontend\DashboardController::class, 'deleteverifications']);
-
-
-
-
-
-
 Route::get('/tutor/educational-information', [App\Http\Controllers\Frontend\DashboardController::class, 'educationalInformation']);
-
 Route::get('/tutor/educational-information/delete/{id}', [App\Http\Controllers\Frontend\DashboardController::class, 'deleteeducationalInformation']);
-
-
-
-
 Route::get('tutor-subject/delete/{id}', [App\Http\Controllers\Frontend\DashboardController::class, 'tutorsubject_delete']);
-
 Route::get('/tutor/subjects', [App\Http\Controllers\Frontend\DashboardController::class, 'tutorsubjects']);
-
 Route::post('/tutor/subjects', [App\Http\Controllers\Frontend\DashboardController::class, 'tutorsubjectStore']);
-
 Route::get('/tutor/articals', [App\Http\Controllers\Frontend\DashboardController::class, 'tutorarticals']);
 
 
@@ -668,7 +463,7 @@ Route::get('/student/message', [App\Http\Controllers\Frontend\StudentChatControl
 Route::get('/student/message/view/{id}', [App\Http\Controllers\Frontend\StudentChatController::class, 'viewmessage']);
 Route::post('/student/message/chat/submit', [App\Http\Controllers\Frontend\StudentChatController::class, 'tutormessagesubmit']);
 Route::post('/student/message/chat', [App\Http\Controllers\Frontend\StudentChatController::class, 'messagechat']);
-// 
+//
 
 
 Route::get('/student/due_amount/paid/{order_id}', [App\Http\Controllers\Frontend\PaymentController::class, 'due_amountpaid']);
@@ -710,6 +505,11 @@ Route::get('/admission-procedure', [App\Http\Controllers\Frontend\PagesControlle
 
 // tutor hire controller
 
+
+
+
+Route::get('/video/online-tutorial', [App\Http\Controllers\Frontend\TutorLessonComplateController::class, 'OnlineVideo']);
+Route::get('/tutor/online-resources', [App\Http\Controllers\Frontend\TutorLessonComplateController::class, 'OnlineResources']);
 
 Route::get('/tutor/hire/payment-details/{order_id}/{diffInweek}/{diffInMonths}/{t_id}', [App\Http\Controllers\Frontend\TutorHireController::class, 'paymentProcess']);
 
@@ -759,7 +559,7 @@ Route::get('/gcse-physics-revision-courses', [App\Http\Controllers\Frontend\Cour
 Route::get('/gcse-english-language-revision-courses', [App\Http\Controllers\Frontend\CourseController::class, 'englishlanguageRevision']);
 
 Route::get('/gcse-english-literature-revision-courses', [App\Http\Controllers\Frontend\CourseController::class, 'englishLiteratureRevision']);
-// end gcse 
+// end gcse
 
 Route::get('/alevel-chemistry-revision-courses', [App\Http\Controllers\Frontend\CourseController::class, 'aLevelchemistryRevision']);
 Route::get('/alevel-maths-revision-courses', [App\Http\Controllers\Frontend\CourseController::class, 'aLevelmathsRevision']);
@@ -793,10 +593,10 @@ Route::get('/work-with-us', [App\Http\Controllers\Frontend\TuitorController::cla
 Route::get('/tutor/signup', [App\Http\Controllers\Frontend\TuitorController::class, 'singup']);
 Route::post('/tutor/signup', [App\Http\Controllers\Frontend\TuitorController::class, 'singupstore']);
 Route::get('/register/success', [App\Http\Controllers\Frontend\TuitorController::class, 'registersuccess'])->name('register.success');
-// 
+//
 Route::get('/register/type', [App\Http\Controllers\Frontend\StudentController::class, 'registertype']);
 
-// 
+//
 Route::get('/student/signup', [App\Http\Controllers\Frontend\StudentController::class, 'singup']);
 Route::post('/student/signup', [App\Http\Controllers\Frontend\StudentController::class, 'singupstore']);
 
@@ -826,7 +626,7 @@ Route::get('/student/tutor-hire-list', [App\Http\Controllers\Frontend\StudentDas
 
 Route::get('/student/tutorrequestlist/view/{id}', [App\Http\Controllers\Frontend\StudentDashboardController::class, 'tutorHireview']);
 Route::post('user/feedback/submit', [App\Http\Controllers\Frontend\StudentDashboardController::class, 'feedbacksubmit']);
-// student payment 
+// student payment
 Route::get('/student/payment', [App\Http\Controllers\Frontend\StudentPaymentController::class, 'index']);
 
 

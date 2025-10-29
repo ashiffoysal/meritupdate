@@ -25,7 +25,16 @@ class User extends Authenticatable
         'social_id',
         'social_type',
         'is_verified',
-        'photo'
+        'photo',
+
+
+    'phone',
+    'address',
+    'is_verified',
+    'user_type',
+    'id_bdonline_tutor',
+    'for_branch_tutor',
+
     ];
 
     /**

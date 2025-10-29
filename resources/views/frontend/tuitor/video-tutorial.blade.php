@@ -8,31 +8,15 @@
     padding-bottom: 50px;
 }
 .main-navbar .navbar .navbar-nav .nav-item a i {
-  
-    top: 0px !important; 
- 
+
+    top: 0px !important;
+
 }
 span.btn {
     font-size: 9px !important;
 }
 </style>
-<div class="page-banner-area">
-    <div class="d-table">
-        <div class="d-table-cell">
-            <div class="container">
-                <div class="page-banner-content">
-                    <h2>Dashboard</h2>
-                    <ul>
-                        <li>
-                            <a href="{{ url('/') }}">Home</a>
-                        </li>
-                        <li>Video Tutorial</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+
 <style>
     aside#layout-menu {
     margin: 15px 0px 0px 50px;
@@ -44,14 +28,14 @@ span.btn {
    @include('frontend.student.include.tutorcss')
 
     <!-- Layout wrapper -->
-    <div class="layout-wrapper layout-content-navbar" style="padding-top:20px">
+    <div class="layout-wrapper layout-content-navbar" style="padding-top:220px;">
       <div class="layout-container">
         <!-- Menu -->
 
         <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme" style="position: relative;">
           <div class="app-brand demo">
             <a href="{{ url('/') }}" class="app-brand-link">
-              
+
             </a>
 
             <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
@@ -79,26 +63,26 @@ span.btn {
 
             <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
               <!-- Search -->
-             
-               
+
+
               <div class="navbar-nav align-items-center">
                 <div class="nav-item d-flex align-items-center">
-                  
+
                 @include('frontend.student.include.headernotify')
-                
+
                 </div>
               </div>
               <!-- /Search -->
 
               <ul class="navbar-nav flex-row align-items-center ms-auto">
-                
+
                 @include('frontend.student.include.dasboardheader')
-                
+
               </ul>
             </div>
           </nav>
-          
-         
+
+
 
           <!-- / Navbar -->
 
@@ -110,10 +94,11 @@ span.btn {
                 <!---->
                  <div class="card mt-1">
                     <h5 class="card-header">Video</h5>
-                             
+
                     <div class="card-body" style="width:100%">
                          <div class="row">
                             <div class="col-md-12">
+                                      <div class="table-responsive">
                                <table class="table table-row-bordered table-row-gray-100 align-middle gs-0 gy-3" id="dataTableExample1" class="data-table" style="width:100%;font-size:14px">
                                 <thead>
                                     <tr>
@@ -126,22 +111,22 @@ span.btn {
                                     </tr>
                                 </thead>
                                     <tbody>
-                                       
+
                                         @foreach($allData as $key => $data)
                                           @php
                                             $ifhasSubject=DB::table('branch_tutor_subjects')->where('subject_id',$data->sub_cate)->where('tutor_id',Auth::user()->id)->first();
                                         @endphp
-                                        
+
                                         @if($ifhasSubject)
                                         <tr>
                                             <td>
-                                            
+
                                                 <a href="{{ url('video/tutorial/view/'.$data->id) }}" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-eye"></i></a>
-                                           
-                                            
-                                                
+
+
+
                                             </td>
-                                         
+
                                             <td>{{$data->title}}</td>
                                             @php
                                                 $watchper=DB::table('video_watch')->where('video_id',$data->id)->where('user_id',Auth::user()->id)->first();
@@ -152,7 +137,7 @@ span.btn {
                                       <div class="progress-bar" style="width: {{ $watchper->watchpercentage }}%">{{ round($watchper->watchpercentage) }} %</div>
                                       </div>
                                                 @else
-                                                
+
                                                  <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
   <div class="progress-bar" style="width: 25%">0%</div>
                                                 </div>
@@ -165,22 +150,24 @@ span.btn {
                                         </tr>
                                          @endif
                                         @endforeach
-                                        
+
                                     </tbody>
                                 </table>
-                                                    
+
+                            </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                
-               
+
+
                 <div class="card mt-1">
                     <h5 class="card-header">FOR ALL TUTOR</h5>
-                             
+
                     <div class="card-body">
                          <div class="row">
                             <div class="col-md-12">
+                                      <div class="table-responsive">
                                <table class="table table-row-bordered table-row-gray-100 align-middle gs-0 gy-3" id="dataTableExample1" class="data-table" style="width:100%;font-size:14px">
                                 <thead>
                                     <tr>
@@ -195,12 +182,12 @@ span.btn {
                                     <tbody>
                                         @php
                                         $alltutorvideo=DB::table('video_tutorial')->where('is_active',1)->where('is_deleted',0)->where('sub_cate',51)->get();
-                                        
+
                                         @endphp
-                                       
+
                                         @foreach($alltutorvideo as $key => $data)
-                                        
-                                      
+
+
                                         <tr>
                                             <th scope="row">{{ ++$key }}</th>
                                             <td>{{$data->title}}</td>
@@ -213,7 +200,7 @@ span.btn {
                                       <div class="progress-bar" style="width: {{ $watchper->watchpercentage }}%">{{ round($watchper->watchpercentage) }} %</div>
                                       </div>
                                                 @else
-                                                
+
                                                  <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
   <div class="progress-bar" style="width: 25%">0%</div>
                                                 </div>
@@ -223,33 +210,34 @@ span.btn {
                                             <td>{{ $data->created_at }}</td>
                                             <td></td>
                                             <td>
-                                            
+
                                                 <a href="{{ url('video/tutorial/view/'.$data->id) }}" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-eye"></i></a>
-                                           
-                                            
-                                                
+
+
+
                                             </td>
                                         </tr>
-                                       
+
                                         @endforeach
-                                        
-                                        
-                                        
-                                        
-                                        
+
+
+
+
+
                                     </tbody>
                                 </table>
-                                                    
+    </div>
                             </div>
                         </div>
                     </div>
                 </div>
                   <div class="card mt-1">
                     <h5 class="card-header">Another Video</h5>
-                             
+
                     <div class="card-body">
                          <div class="row">
                             <div class="col-md-12">
+                              <div class="table-responsive">
                                <table class="table table-row-bordered table-row-gray-100 align-middle gs-0 gy-3" id="dataTableExample1" class="data-table" style="width:100%;font-size:14px">
                                 <thead>
                                     <tr>
@@ -262,10 +250,10 @@ span.btn {
                                     </tr>
                                 </thead>
                                     <tbody>
-                                       
+
                                         @foreach($allDataindividual as $key => $data)
-                                        
-                                      
+
+
                                         <tr>
                                             <th scope="row">{{ ++$key }}</th>
                                             <td>{{$data->title}}</td>
@@ -278,7 +266,7 @@ span.btn {
                                       <div class="progress-bar" style="width: {{ $watchper->watchpercentage }}%">{{ round($watchper->watchpercentage) }} %</div>
                                       </div>
                                                 @else
-                                                
+
                                                  <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
   <div class="progress-bar" style="width: 25%">0%</div>
                                                 </div>
@@ -288,23 +276,23 @@ span.btn {
                                             <td>{{ $data->created_at }}</td>
                                             <td></td>
                                             <td>
-                                            
+
                                                 <a href="{{ url('video/tutorial/view/'.$data->id) }}" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-eye"></i></a>
-                                           
-                                            
-                                                
+
+
+
                                             </td>
                                         </tr>
-                                       
+
                                         @endforeach
-                                        
-                                        
-                                        
-                                        
-                                        
+
+
+
+
+
                                     </tbody>
                                 </table>
-                                                    
+                              </div>
                             </div>
                         </div>
                     </div>
@@ -312,7 +300,7 @@ span.btn {
                <!--end-->
                 </div>
             <!-- / Content -->
-      
+
 
             <div class="content-backdrop fade"></div>
           </div>

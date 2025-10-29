@@ -17,17 +17,17 @@
               <li><a href="{{ url('/logout') }}"> <i class="fa fa-edit"></i> Logout</a></li>
               @else
               <li><a href="{{ url('/tutor/information') }}"> <i class="fa fa-user"></i> Dashboard</a></li>
-              
-             
-              
-              
-              
+
+
+
+
+
               <li><a href="{{ url('/user/verification') }}"> <i class="fa fa-bookmark-o" ></i> Verification</a></li>
               <li><a href="{{ url('/tutor/account') }}"> <i class="fa fa-navicon"></i> Edit Profile</a></li>
                <li><a href="{{ url('/tutor/subject-create') }}"> <i class="fa fa-navicon"></i> Subject Manage</a></li>
-              
+
               <li><a href="{{ url('/user/video') }}"> <i class="fa fa-navicon"></i>Video Presentation</a></li>
-              
+
               <li><a href="{{ url('/tutor/message') }}"> <i class="fa fa-comment"></i> My Message</a></li>
               <li><a href="{{ url('/tutor/educational-information') }}"> <i class="fa fa-user"></i> Educational Documents</a></li>
               <li><a href="{{ url('/tutor/student-request-list') }}"> <i class="fa fa-check-square"></i>Student Request</a></li>
@@ -44,8 +44,8 @@
               <li><a href="{{ url('/logout') }}"> <i class="fa fa-edit"></i> Logout</a></li>
               @endif
               --}}
-              
-              
+
+
             @if(Auth::user()->user_type==1)
                <!-- Dashboard -->
             <li class="menu-item  {{ (request()->is('/student/dashboard*')) ? 'active' : '' }}">
@@ -54,8 +54,8 @@
                 <div data-i18n="Analytics">Dashboard</div>
               </a>
             </li>
-            
-            
+
+
                <li class="menu-item {{ (request()->is('/student/updateprofile*')) ? 'active' : '' }}">
               <a href="{{ url('/student/updateprofile') }}" class="menu-link">
                <i class="menu-icon tf-icons bx bx-collection"></i>
@@ -68,23 +68,23 @@
                 <div data-i18n="Analytics">Verification</div>
               </a>
             </li>
-            
+
             <li class="menu-item {{ (request()->is('/student/message*')) ? 'active' : '' }}">
               <a href="{{ url('/student/message') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-collection"></i>
                 <div data-i18n="Analytics">My Message</div>
               </a>
             </li>
-             
-            
+
+
 
             <!-- Layouts -->
-      
+
 
             <li class="menu-header small text-uppercase">
               <span class="menu-header-text">Pages</span>
             </li>
-          
+
               <!-- Extended components -->
             <li class="menu-item">
               <a href="javascript:void(0)" class="menu-link menu-toggle">
@@ -107,8 +107,8 @@
                     <div data-i18n="Text Divider">Save Tutor</div>
                   </a>
                 </li>
-                
-                
+
+
               </ul>
             </li>
             <li class="menu-item ">
@@ -154,9 +154,9 @@
             </li>
             --}}
             <!-- User interface -->
-          
 
-        
+
+
 
             @php
                 $notifycount=App\Models\NotifyChat::where('user_id',Auth::user()->id)->select(['id','user_is_seen'])->where('user_is_seen',0)->count();
@@ -175,17 +175,17 @@
               </a>
             </li>
             @endif
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
+
+
+
+
+
+
+
+
+
+
+
             @if(Auth::user()->user_type==2)
                <!-- Dashboard -->
             <li class="menu-item {{ (request()->is('/tutor/information*')) ? 'active' : '' }}">
@@ -194,27 +194,46 @@
                 <div data-i18n="Analytics">Dashboard</div>
               </a>
             </li>
-            
-             @if(Auth::user()->for_branch_tutor==1) 
-              
+
+             @if(Auth::user()->for_branch_tutor==1)
+
                 <li class="menu-item {{ (request()->is('/video/tutorial*')) ? 'active' : '' }}">
-                     
+
                       <a href="{{ url('/video/tutorial') }}" class="menu-link">
                            <i class="menu-icon tf-icons bx bx-collection"></i>
                             <div data-i18n="Analytics">Video Tutorial</div>
                           </a>
-              
+
               </li>
-              
+
                 <li class="menu-item {{ (request()->is('/tutor/subjects*')) ? 'active' : '' }}">
-                     
+
                       <a href="{{ url('/tutor/subjects') }}" class="menu-link">
                            <i class="menu-icon tf-icons bx bx-collection"></i>
                             <div data-i18n="Analytics">My Branch Subjects</div>
                           </a>
-              
+
               </li>
               @endif
+
+
+              <li class="menu-item {{ (request()->is('/video/online-tutorial*')) ? 'active' : '' }}">
+
+                    <a href="{{ url('/video/online-tutorial') }}" class="menu-link">
+                         <i class="menu-icon tf-icons bx bx-collection"></i>
+                          <div data-i18n="Analytics">Video Tutorial(Online)</div>
+                        </a>
+
+            </li>
+
+            <li class="menu-item {{ (request()->is('/tutor/online-resources*')) ? 'active' : '' }}">
+
+                  <a href="{{ url('/tutor/online-resources') }}" class="menu-link">
+                       <i class="menu-icon tf-icons bx bx-collection"></i>
+                        <div data-i18n="Analytics">Online Tuition Resources</div>
+                      </a>
+
+          </li>
                <li class="menu-item {{ (request()->is('/tutor/account*')) ? 'active' : '' }}">
               <a href="{{ url('tutor/account') }}" class="menu-link">
                <i class="menu-icon tf-icons bx bx-collection"></i>
@@ -245,16 +264,16 @@
                 <div data-i18n="Analytics">Video Presentation</div>
               </a>
             </li>
-          
-             
-            
-            
+
+
+
+
 
             <!-- Layouts -->
-      
+
 
               <!-- Extended components -->
-         
+
             <li class="menu-header small text-uppercase">
               <span class="menu-header-text">Student Lesson</span>
             </li>
@@ -282,8 +301,8 @@
                 </li>
               </ul>
             </li>
-         
-      
+
+
             <li class="menu-header small text-uppercase">
               <span class="menu-header-text">Pages</span>
             </li>
@@ -329,9 +348,9 @@
               </a>
             </li>
             <!-- User interface -->
-          
 
-        
+
+
 
             @php
                 $notifycount=App\Models\NotifyChat::where('user_id',Auth::user()->id)->select(['id','user_is_seen'])->where('user_is_seen',0)->count();
@@ -350,9 +369,3 @@
               </a>
             </li>
             @endif
-              
-              
-              
-              
-              
-            

@@ -27,7 +27,7 @@
 					<span class="menu-title">FOR ADMIN VIDEO</span>
 				</a>
 			</div>
-			{{-- 
+			{{--
 			<div class="menu-item">
 				<a class="menu-link {{ request()->routeIs('admin.staff-video.index*') ? 'active' : '' }}" href="{{route('admin.staff-video.index')}}">
 					<span class="menu-icon">
@@ -47,7 +47,7 @@
 				</a>
 			</div>
 		@endif
-		
+
 		    <div class="menu-item">
 				<a class="menu-link {{ request()->routeIs('admin.watch-recored.index*') ? 'active' : '' }}" href="{{route('admin.watch-recored.index')}}">
 					<span class="menu-icon">
@@ -56,7 +56,7 @@
 					<span class="menu-title">VIDEO WATCHING RECORD</span>
 				</a>
 			</div>
-			
+
 		    <div class="menu-item">
 				<a class="menu-link {{ request()->routeIs('admin.summerschool.index*') ? 'active' : '' }}" href="{{route('admin.summerschool.index')}}">
 					<span class="menu-icon">
@@ -68,8 +68,8 @@
 					<span class="menu-title">SUMMER SCHOOL</span><span class="badge badge-light-success">{{ $summerall }}</span>
 				</a>
 			</div>
-			
-				
+
+
 		    <div class="menu-item">
 				<a class="menu-link {{ request()->routeIs('admin.mathscompetition.index*') ? 'active' : '' }}" href="{{route('admin.mathscompetition.index')}}">
 					<span class="menu-icon">
@@ -81,8 +81,8 @@
 					<span class="menu-title">MATHS COMPETITION</span><span class="badge badge-light-success">{{ $mathsall }}</span>
 				</a>
 			</div>
-			
-			
+
+
 			@if(Auth::user()->assesment==1)
 			<div class="menu-item">
 				<a class="menu-link {{ request()->routeIs('admin.assesment.index*') ? 'active' : '' }}" href="{{route('admin.assesment.index')}}">
@@ -99,7 +99,7 @@
 			<div class="menu-item">
 			    @php
 			        $applicant_count=DB::table('apply_works')->where('is_deleted',0)->count();
-			    @endphp 
+			    @endphp
 				<a class="menu-link {{ request()->routeIs('admin.applycandidate.candidate*') ? 'active' : '' }}" href="{{ route('admin.applycandidate.candidate') }}">
 					<span class="menu-icon">
 						<i class="bi bi-house fs-3"></i>
@@ -109,11 +109,11 @@
 			</div>
 			<!--  -->
 			@if(Auth::user()->tutor==1)
-			
+
 			@php
 			    $totalverification=App\Models\VerificationCenter::where('is_verify',0)->count();
 			    $totaltutoreducation=App\Models\TutorEducation::where('is_verify',0)->count();
-			    
+
 			@endphp
 
 			<div class="menu-item">
@@ -185,7 +185,7 @@
 					<span class="menu-title">ASSIGN TUTOR</span>
 				</a>
 			</div>
-			
+
 			@endif
 			@if(Auth::user()->student_request==1)
 			<!--  -->
@@ -213,7 +213,7 @@
 				</a>
 			</div>
 			@endif
-			
+
 			<!--  -->
 			<div class="menu-item">
 				<div class="menu-content pt-8 pb-2">
@@ -236,11 +236,11 @@
 					<span class="menu-title">ALL RESULT</span>
 				</a>
 			</div>
-		
-			
-			
-			
-			
+
+
+
+
+
 			<div class="menu-item">
 				<div class="menu-content pt-8 pb-2">
 					<span class="menu-section text-muted text-uppercase fs-8 ls-1">RESOURCES</span>
@@ -254,9 +254,9 @@
 					<span class="menu-title">All Resources </span><span class="badge badge-light-danger"></span>
 				</a>
 			</div>
-		
-			
-			
+
+
+
 			<!--  -->
 			<div class="menu-item">
 				<div class="menu-content pt-8 pb-2">
@@ -275,11 +275,11 @@
 				</a>
 			</div>
 
-		
-		
-			
-			
-			
+
+
+
+
+
 			@if(Auth::user()->receive_payment==1)
 			<div class="menu-item">
 				<div class="menu-content pt-8 pb-2">
@@ -319,14 +319,55 @@
 				</a>
 			</div>
 			@endif
+
+
+			<div class="menu-item">
+				<div class="menu-content pt-8 pb-2">
+					<span class="menu-section text-muted text-uppercase fs-8 ls-1">Tuition</span>
+				</div>
+			</div>
+
+
+			<div data-kt-menu-trigger="click" class="menu-item menu-accordion  @if(request()->routeIs('admin.tuition-resources*')) here show   @endif">
+				<span class="menu-link">
+					<span class="menu-icon">
+						<i class="bi bi-layers fs-3"></i>
+					</span>
+					<span class="menu-title">Tuition-Resources</span>
+					<span class="menu-arrow"></span>
+				</span>
+				<div class="menu-sub menu-sub-accordion menu-active-bg">
+					<div class="menu-item">
+						<a class="menu-link {{ request()->routeIs('admin.tuition-resources-create*') ? 'active' : '' }}" href="{{url('admin/tuition-reources-create')}}">
+							<span class="menu-bullet">
+								<span class="bullet bullet-dot"></span>
+							</span>
+							<span class="menu-title"> Create</span>
+						</a>
+					</div>
+					<div class="menu-item">
+						<a class="menu-link {{ request()->routeIs('admin.tuition-resources-index*') ? 'active' : '' }}"  href="{{ route('admin.tuition-resources') }}">
+							<span class="menu-bullet">
+								<span class="bullet bullet-dot"></span>
+							</span>
+							<span class="menu-title">Index</span>
+						</a>
+					</div>
+				</div>
+			</div>
+
+
 			@if(Auth::user()->role==1)
+
+
+
 			<div class="menu-item">
 				<div class="menu-content pt-8 pb-2">
 					<span class="menu-section text-muted text-uppercase fs-8 ls-1">Admin-User</span>
 				</div>
 			</div>
-		
-		
+
+
 			<div data-kt-menu-trigger="click" class="menu-item menu-accordion  @if(request()->routeIs('admin-user*')) here show   @endif">
 				<span class="menu-link">
 					<span class="menu-icon">
@@ -402,7 +443,7 @@
 							<span class="menu-title">ALL SUBSCRIBER</span>
 						</a>
 					</div>
-					
+
 					<div class="menu-item">
 						<a class="menu-link {{ request()->routeIs('admin.about-us*') ? 'active' : '' }}" href="{{ route('admin.about-us.update') }}">
 							<span class="menu-bullet">
@@ -411,7 +452,7 @@
 							<span class="menu-title">ABOUT US</span>
 						</a>
 					</div>
-					{{-- 
+					{{--
                     <div class="menu-item">
                         <a class="menu-link {{ request()->routeIs('admin.privacy-policy.update*') ? 'active' : '' }}"
                             href="{{ route('admin.privacy-policy.update') }}">
@@ -445,7 +486,7 @@
 			</div>
 			@endif
 			@if(Auth::user()->banner==1)
-			
+
 			<div class="menu-item">
 				<a class="menu-link {{ request()->routeIs('admin.banner.update*') ? 'active' : '' }}" href="{{route('admin.banner.update')}}">
 					<span class="menu-icon">
@@ -465,7 +506,7 @@
 					<span class="menu-title">TERMS & CONDITION</span>
 				</a>
 			</div>
-			
+
 			<div class="menu-item">
 				<a class="menu-link {{ request()->routeIs('admin.privacy-policy.update*') ? 'active' : '' }}" href="{{url('/admin/privacy-policy/update')}}">
 					<span class="menu-icon">
@@ -501,7 +542,7 @@
 							<span class="menu-title">ALL GALLERY</span>
 						</a>
 					</div>
-					
+
 				</div>
 			</div>
 			@endif
@@ -531,7 +572,7 @@
 							<span class="menu-title">ALL EVENT</span>
 						</a>
 					</div>
-					
+
 				</div>
 			</div>
 			@endif
@@ -577,7 +618,7 @@
 							<span class="menu-title">ADD BLOG-CATEGORY</span>
 						</a>
 					</div>
-					
+
 				</div>
 			</div>
 			@endif
@@ -607,7 +648,7 @@
 							<span class="menu-title">ADD REVIEW</span>
 						</a>
 					</div>
-					
+
 				</div>
 			</div>
 			@endif
@@ -640,7 +681,7 @@
 				</div>
 			</div>
 			@endif
-			
+
 			<div class="menu-item">
 				<a class="menu-link" href="{{route('admin.logout')}}">
 					<span class="menu-icon">

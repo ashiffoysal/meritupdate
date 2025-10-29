@@ -8,31 +8,15 @@
     padding-bottom: 50px;
 }
 .main-navbar .navbar .navbar-nav .nav-item a i {
-  
-    top: 0px !important; 
- 
+
+    top: 0px !important;
+
 }
 span.btn {
     font-size: 9px !important;
 }
 </style>
-<div class="page-banner-area">
-    <div class="d-table">
-        <div class="d-table-cell">
-            <div class="container">
-                <div class="page-banner-content">
-                    <h2>Dashboard</h2>
-                    <ul>
-                        <li>
-                            <a href="{{ url('/') }}">Home</a>
-                        </li>
-                        <li>Dashboard</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+
 <style>
     aside#layout-menu {
     margin: 15px 0px 0px 50px;
@@ -51,14 +35,14 @@ span.sub_header {
    @include('frontend.student.include.tutorcss')
 
     <!-- Layout wrapper -->
-    <div class="layout-wrapper layout-content-navbar" style="padding-top:20px">
+    <div class="layout-wrapper layout-content-navbar" style="padding-top:220px">
       <div class="layout-container">
         <!-- Menu -->
 
         <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme" style="position: relative;">
           <div class="app-brand demo">
             <a href="{{ url('/') }}" class="app-brand-link">
-              
+
             </a>
 
             <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
@@ -86,26 +70,26 @@ span.sub_header {
 
             <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
               <!-- Search -->
-             
-             
+
+
               <div class="navbar-nav align-items-center">
                 <div class="nav-item d-flex align-items-center">
-                  
+
                 @include('frontend.student.include.headernotify')
-                
+
                 </div>
               </div>
               <!-- /Search -->
 
               <ul class="navbar-nav flex-row align-items-center ms-auto">
-                
+
                 @include('frontend.student.include.dasboardheader')
-                
+
               </ul>
             </div>
           </nav>
-          
-         
+
+
 
           <!-- / Navbar -->
 
@@ -117,10 +101,10 @@ span.sub_header {
                <div class="card">
                     <h5 class="card-header">Manage Subjects</h5>
                     <span class="sub_header">Enter your tutoring Subjects</span>
-                              
-                    
+
+
                     <div class="card-body">
-                     
+
                                  <form action="#" method="post" enctype="multipart/form-data">
                                                         @csrf
                                                     <div class="row">
@@ -134,14 +118,14 @@ span.sub_header {
                                     @foreach($alllevel as $level)
                                     <option value="{{ $level->id }}">{{ $level->level_name }}</option>
                                     @endforeach
-                                
+
                                                               </select>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-4">
                                                             <div class="form-group">
                                                               <select class="form-control" name="subject" id="subject">
-                                                   <option disabled selected>Select</option>               
+                                                   <option disabled selected>Select</option>
                                                               </select>
                                                             </div>
                                                         </div>
@@ -154,19 +138,19 @@ span.sub_header {
                                                             </div>
                                                         </div>
                                                     </form>
-                               
-                        
+
+
                     </div>
                 </div>
-                
+
                 <!---->
                  <div class="card mt-5">
                     <h5 class="card-header"></h5>
-                    
+
                     <div class="card-body">
                          <div class="row">
                             <div class="col-md-12" id="maindata">
-                               
+
                             </div>
                         </div>
                     </div>
@@ -174,7 +158,7 @@ span.sub_header {
                <!--end-->
                 </div>
             <!-- / Content -->
-      
+
 
             <div class="content-backdrop fade"></div>
           </div>
@@ -201,13 +185,13 @@ span.sub_header {
                      type:"GET",
                      data:'json',
                      success:function(data) {
-                      
+
                            $('#subject').empty();
                         $('#subject').append(' <option disabled >Select</option>');
                         $.each(data,function(index,districtObj){
                          $('#subject').append('<option value="' + districtObj.id + '">'+districtObj.name+'</option>');
                        });
-    
+
                     }
                  });
              } else {
@@ -221,7 +205,7 @@ span.sub_header {
     function addsubject(){
         var subject_id=$("#subject").val();
         var level_id=$("#level").val();
-       
+
         if(subject_id==null){
             alert("Please Select Subject!!");
         }else{
@@ -229,7 +213,7 @@ span.sub_header {
                  $.ajax({
                      url: "{{  url('/get/subject/subject/submit') }}",
                      type:"GET",
-                     
+
                      data:{
                          'subject_id':subject_id,
                          'level_id':level_id,
@@ -237,14 +221,14 @@ span.sub_header {
                      success:function(data) {
                         if(data=='ok'){
                             alert('This Subject Already Created');
-                           
+
                         }else if(data=='no'){
                             getallsubject();
                               alert('success');
-                            
+
                         }
-                         
-    
+
+
                     }
                  });
              } else {
@@ -261,7 +245,7 @@ span.sub_header {
              type:"GET",
              data:'json',
              success:function(data) {
-                
+
                  $("#maindata").html(data);
 
             }

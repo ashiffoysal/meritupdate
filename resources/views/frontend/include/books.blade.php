@@ -14,10 +14,10 @@
                             </div>
                             <div class="our_featured_products_contents owl-carousel owl-theme">
                                 @foreach ($allResources as $resources)
-                                    
-                              
+
+
                                 <div class="our_featured_products_single">
-                                    <img src="{{ asset('updatecore/public/'.$resources->thumbnail_image) }}" alt="">
+                                    <img src="{{ asset('/'.$resources->thumbnail_image) }}" alt="">
                                     <p>{{ $resources->title }}</p>
                                     <h4>£ {{ $resources->price }} </h4>
                                     <a href="{{$resources->purchase_link}}">View Product</a>

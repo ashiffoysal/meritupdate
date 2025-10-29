@@ -7,28 +7,12 @@
     padding-bottom: 50px;
 }
 .main-navbar .navbar .navbar-nav .nav-item a i {
-  
-    top: 0px !important; 
- 
+
+    top: 0px !important;
+
 }
 </style>
-<div class="page-banner-area">
-    <div class="d-table">
-        <div class="d-table-cell">
-            <div class="container">
-                <div class="page-banner-content">
-                    <h2>Dashboard</h2>
-                    <ul>
-                        <li>
-                            <a href="{{ url('/') }}">Home</a>
-                        </li>
-                        <li>Dashboard</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+
 <style>
     aside#layout-menu {
     margin: 15px 0px 0px 50px;
@@ -40,14 +24,14 @@
    @include('frontend.student.include.tutorcss')
 
     <!-- Layout wrapper -->
-    <div class="layout-wrapper layout-content-navbar" style="padding-top:20px">
+    <div class="layout-wrapper layout-content-navbar" style="padding-top:220px">
       <div class="layout-container">
         <!-- Menu -->
 
         <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme" style="position: relative;">
           <div class="app-brand demo">
             <a href="{{ url('/') }}" class="app-brand-link">
-              
+
             </a>
 
             <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
@@ -75,25 +59,25 @@
 
             <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
               <!-- Search -->
-             
+
               <div class="navbar-nav align-items-center">
                 <div class="nav-item d-flex align-items-center">
-                  
+
                 @include('frontend.student.include.headernotify')
-                
+
                 </div>
               </div>
               <!-- /Search -->
 
               <ul class="navbar-nav flex-row align-items-center ms-auto">
-                
+
                 @include('frontend.student.include.dasboardheader')
-                
+
               </ul>
             </div>
           </nav>
-          
-         
+
+
 
           <!-- / Navbar -->
 
@@ -116,14 +100,14 @@
                                                     <li>Academic certificates</li>
                                                     <li>Verification documents</li>
                                                 </ol>
-                                        
+
                           <p class="mb-4">
-                           
+
                                                Please note that all verification documents uploaded must be recent. We cannot accept any expired documentation
                           </p>
 
                           <a href="{{ url('/user/verification') }}" class="btn btn-sm btn-outline-primary">Add Verification</a>
-                          
+
                           <a href="{{ url('/tutor/educational-information') }}" class="btn btn-sm btn-outline-primary">Add Educational Documents</a>
                            <a href="{{ url('/tutor/subject-create') }}" class="btn btn-sm btn-outline-primary">Manage Subjects</a>
                             <a href="{{ url('/user/video') }}" class="btn btn-sm btn-outline-primary">Add Short Video</a>
@@ -160,7 +144,7 @@
                     </div>
                   </div>
                 </div>
-               
+
                 <!-- Total Revenue -->
                 <div class="col-12 col-lg-8 order-2 order-md-3 order-lg-2 mb-4">
                   <div class="card">
@@ -244,13 +228,13 @@
                                 <i class="bx bx-dots-vertical-rounded"></i>
                               </button>
                               <div class="dropdown-menu dropdown-menu-end" aria-labelledby="cardOpt4">
-                               
+
                               </div>
                             </div>
                           </div>
                           <span class="d-block mb-1">Earn</span>
                           <h3 class="card-title text-nowrap mb-2"> {{ $earn }} GBP</h3>
-                          
+
                         </div>
                       </div>
                     </div>
@@ -273,25 +257,25 @@
                                 <i class="bx bx-dots-vertical-rounded"></i>
                               </button>
                               <div class="dropdown-menu" aria-labelledby="cardOpt1">
-                              
+
                               </div>
                             </div>
                           </div>
                           <span class="fw-semibold d-block mb-1">Withdraw</span>
                           <h3 class="card-title mb-2">{{ $withdraw }} GBP</h3>
-                          
+
                         </div>
                       </div>
                     </div>
-                    
-               
+
+
                   </div>
                 </div>
               </div>
-            
+
             </div>
             <!-- / Content -->
-      
+
 
             <div class="content-backdrop fade"></div>
           </div>

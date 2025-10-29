@@ -6,9 +6,11 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\StudentTutorRequest;
 use App\Models\TutorComplatelesson;
+use App\Models\TuitionResource;
 use Carbon\Carbon;
 use Auth;
 use Alert;
+use DB;
 
 class TutorLessonComplateController extends Controller
 {
@@ -26,14 +28,14 @@ class TutorLessonComplateController extends Controller
     }
     //
     public function store(Request $request){
-      
+
         $validated = $request->validate([
             'course_list' => 'required',
             'date' => 'required',
             'lesson_complete_details' => 'required',
         ]);
         $student_id=StudentTutorRequest::where('id',$request->course_list)->select(['student_id'])->first();
-    
+
         $insert=TutorComplatelesson::insert([
             'date'=>$request->input('date'),
             'subject'=>$request->input('subject'),
@@ -71,6 +73,16 @@ class TutorLessonComplateController extends Controller
             return redirect()->back();
         }
 
+    }
+
+    public function OnlineResources(){
+      $allData=TuitionResource::where('is_deleted',0)->orderBy('id','DESC')->get();
+        return view('frontend.tuitor.allresource',compact('allData'));
+    }
+
+    public function OnlineVideo(){
+           $allData=DB::table('video_tutorial')->where('user','TUTOR')->where('is_active',1)->where('is_deleted',0)->orderBy('id','DESC')->get();
+        return view('frontend.tuitor.onlinetutorvideo',compact('allData'));
     }
 
 }

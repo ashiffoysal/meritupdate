@@ -8,31 +8,15 @@
     padding-bottom: 50px;
 }
 .main-navbar .navbar .navbar-nav .nav-item a i {
-  
-    top: 0px !important; 
- 
+
+    top: 0px !important;
+
 }
 span.btn {
     font-size: 9px !important;
 }
 </style>
-<div class="page-banner-area">
-    <div class="d-table">
-        <div class="d-table-cell">
-            <div class="container">
-                <div class="page-banner-content">
-                    <h2>Dashboard</h2>
-                    <ul>
-                        <li>
-                            <a href="{{ url('/') }}">Home</a>
-                        </li>
-                        <li>Dashboard</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+
 <style>
     aside#layout-menu {
     margin: 15px 0px 0px 50px;
@@ -44,14 +28,14 @@ span.btn {
    @include('frontend.student.include.tutorcss')
 
     <!-- Layout wrapper -->
-    <div class="layout-wrapper layout-content-navbar" style="padding-top:20px">
+    <div class="layout-wrapper layout-content-navbar" style="padding-top:220px">
       <div class="layout-container">
         <!-- Menu -->
 
         <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme" style="position: relative;">
           <div class="app-brand demo">
             <a href="{{ url('/') }}" class="app-brand-link">
-              
+
             </a>
 
             <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
@@ -79,26 +63,26 @@ span.btn {
 
             <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
               <!-- Search -->
-             
-               
+
+
               <div class="navbar-nav align-items-center">
                 <div class="nav-item d-flex align-items-center">
-                  
+
                 @include('frontend.student.include.headernotify')
-                
+
                 </div>
               </div>
               <!-- /Search -->
 
               <ul class="navbar-nav flex-row align-items-center ms-auto">
-                
+
                 @include('frontend.student.include.dasboardheader')
-                
+
               </ul>
             </div>
           </nav>
-          
-         
+
+
 
           <!-- / Navbar -->
 
@@ -124,29 +108,29 @@ span.btn {
                                                         <tbody>
                                                             <tr>
                                                                 <td>GCSE</td>
-                                                                <td> 
-                                                                    @if($gcse)  
+                                                                <td>
+                                                                    @if($gcse)
                                                                     {{$gcse->institution}}
                                                                     @else
                                                                     <span class="btn-sm btn-danger">Enter Institution</span>
                                                                     @endif
                                                                 </td>
                                                                 <td>
-                                                                    @if($gcse)  
+                                                                    @if($gcse)
                                                                     {{$gcse->subject}}
                                                                     @else
                                                                     <span class="btn-sm btn-danger">Enter Subject</span>
                                                                     @endif
                                                                 </td>
                                                                 <td>
-                                                                    @if($gcse)  
+                                                                    @if($gcse)
                                                                     {{$gcse->grade}}
                                                                     @else
                                                                     <span class="btn-sm btn-danger">Enter Grade</span>
                                                                     @endif
                                                                 </td>
                                                                 <td>
-                                                                    @if($gcse)  
+                                                                    @if($gcse)
                                                                         @if($gcse->is_verify==0)
                                                                         <span class="btn-sm btn-warning">Pending</span>
                                                                         @elseif($gcse->is_verify==1)
@@ -155,7 +139,7 @@ span.btn {
                                                                         <span class="btn-sm btn-danger">Reject</span>
                                                                         @endif
                                                                     @else
-                                                                    
+
                                                                     @endif
                                                                 </td>
                                                                 <td><a  data-bs-toggle="modal" data-bs-target="#GCSE" href="#"><span class="btn">Upload Now</span></a></td>
@@ -163,23 +147,23 @@ span.btn {
                                                             <tr>
                                                                 <td>A-Level</td>
                                                                 <td>
-                                                                    @if($alevel)  
+                                                                    @if($alevel)
                                                                    {{$alevel->institution}}
                                                                     @else
                                                                     <span class="btn-sm btn-danger">Enter Institution</span>
                                                                     @endif
                                                                 </td>
-                                                                <td> @if($alevel)  
+                                                                <td> @if($alevel)
                                                                    {{$alevel->subject}}
                                                                     @else
                                                                     <span class="btn-sm btn-danger">Enter Subject</span>
                                                                     @endif</td>
-                                                                <td> @if($alevel)  
+                                                                <td> @if($alevel)
                                                                     {{$alevel->grade}}
                                                                     @else
                                                                     <span class="btn-sm btn-danger">Enter Grade</span>
                                                                     @endif</td>
-                                                                <td> @if($alevel)  
+                                                                <td> @if($alevel)
                                                                          @if($alevel->is_verify==0)
                                                                         <span class="btn-sm btn-warning">Pending</span>
                                                                         @elseif($alevel->is_verify==1)
@@ -188,28 +172,28 @@ span.btn {
                                                                         <span class="btn-sm btn-danger">Reject</span>
                                                                         @endif
                                                                     @else
-                                                                    
+
                                                                     @endif</td>
                                                                 <td><a data-bs-toggle="modal" data-bs-target="#alevel" href="#"><span class="btn" >Upload Now</span></a></td>
                                                             </tr>
                                                             <tr>
                                                                 <td>Degree</td>
-                                                                <td> @if($degree)  
+                                                                <td> @if($degree)
                                                                     {{$degree->institution}}
                                                                     @else
                                                                     <span class="btn-sm btn-danger">Enter Institution</span>
                                                                     @endif</td>
-                                                                <td> @if($degree)  
+                                                                <td> @if($degree)
                                                                     {{$degree->subject}}
                                                                     @else
                                                                     <span class="btn-sm btn-danger">Enter Subject</span>
                                                                     @endif</td>
-                                                                <td> @if($degree)  
+                                                                <td> @if($degree)
                                                                     {{$degree->grade}}
                                                                     @else
                                                                     <span class="btn-sm btn-danger">Enter Grade</span>
                                                                     @endif</td>
-                                                                <td> @if($degree)  
+                                                                <td> @if($degree)
                                                                     @if($degree->is_verify==0)
                                                                     <span class="btn-sm btn-warning">Pending</span>
                                                                     @elseif($degree->is_verify==1)
@@ -218,28 +202,28 @@ span.btn {
                                                                     <span class="btn-sm btn-danger">Reject</span>
                                                                     @endif
                                                                     @else
-                                                                    
+
                                                                     @endif</td>
                                                                 <td><a data-bs-toggle="modal" data-bs-target="#degree" href="#"><span class="btn">Upload Now</span></a></td>
                                                             </tr>
                                                             <tr>
                                                                 <td>Masters</td>
-                                                                <td> @if($masters)  
+                                                                <td> @if($masters)
                                                                     {{$masters->institution}}
                                                                     @else
                                                                     <span class="btn-sm btn-danger">Enter Institution</span>
                                                                     @endif</td>
-                                                                <td> @if($masters)  
+                                                                <td> @if($masters)
                                                                     {{$masters->subject}}
                                                                     @else
                                                                     <span class="btn-sm btn-danger">Enter Subject</span>
                                                                     @endif</td>
-                                                                <td> @if($masters)  
+                                                                <td> @if($masters)
                                                                     {{$masters->grade}}
                                                                     @else
                                                                     <span class="btn-sm btn-danger">Enter Grade</span>
                                                                     @endif</td>
-                                                                <td> @if($masters)  
+                                                                <td> @if($masters)
                                                                     @if($masters->is_verify==0)
                                                                     <span class="btn-sm btn-warning">Pending</span>
                                                                     @elseif($masters->is_verify==1)
@@ -248,24 +232,24 @@ span.btn {
                                                                     <span class="btn-sm btn-danger">Reject</span>
                                                                     @endif
                                                                     @else
-                                                                   
+
                                                                     @endif</td>
                                                                 <td><a data-bs-toggle="modal" data-bs-target="#masters" href="#"><span class="btn">Upload Now</span></a></td>
                                                             </tr>
                                                             @foreach($basic_identity as $identity)
                                                             <tr>
                                                                 <td>{{$identity->name_of_degree}}</td>
-                                                                <td>   
+                                                                <td>
                                                                     {{$identity->institution}}
                                                                    </td>
-                                                                <td>  
+                                                                <td>
                                                                     {{$identity->subject}}
                                                                     </td>
-                                                                <td>  
+                                                                <td>
                                                                     {{$identity->grade}}
-                                                                   
+
                                                                     </td>
-                                                                <td>  
+                                                                <td>
                                                                     @if($identity->is_verify==0)
                                                                     <span class="btn-sm btn-warning">Pending</span>
                                                                     @elseif($identity->is_verify==1)
@@ -280,7 +264,7 @@ span.btn {
 
 
 
-                                                            
+
                                                         </tbody>
                                                     </table>
                       </div>
@@ -290,7 +274,7 @@ span.btn {
                     <h5 class="card-header">Verification Step Summary</h5>
                     <div class="card-body">
                       <div class="table-responsive text-nowrap">
-               
+
                                                     <table class="table table-borderless">
                                                         <thead>
                                                             <tr>
@@ -299,7 +283,7 @@ span.btn {
                                                                 <th scope="col">PROGRESS</th>
                                                                 <th scope="col">MORE</th>
                                                                           <th scope="col">ACTION</th>
-                                                               
+
                                                             </tr>
                                                         </thead>
                                                         <tbody>
@@ -317,23 +301,23 @@ span.btn {
                                                                     @endif
                                                                 </td>
                                                                 <td><p style="font-size:10px">{{$data->more}}</p></td>
-                                                                  <td> 
+                                                                  <td>
                                     <a data-bs-toggle="modal" data-bs-target="#exampleModal" class="veri view" data-id="{{ $data->id }}" href="#">View</i></a>
-                                                                      
+
                                                                          @if($data->is_verify !=1)
                                                                          <a class="veri" href="{{ url('/tutor/educational-information/delete/'.$data->id) }}">Delete</a>
                                                                     @endif
                                                                       </td>
-                                                                      
-                                                                      
-                                                                      
-                                                                      
-                                                                      
-                                                                      
-                                                                      
+
+
+
+
+
+
+
                                                             </tr>
                                                             @endforeach
-                                                            
+
                                                         </tbody>
                                                     </table>
                       </div>
@@ -341,9 +325,9 @@ span.btn {
                   </div>
               </div>
               </div>
-           
+
             <!-- / Content -->
-      
+
 
             <div class="content-backdrop fade"></div>
           </div>
@@ -373,7 +357,7 @@ span.btn {
         <div class="modal-body">
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">University/School/College <span style="color:red">*</span></label>
-                <input type="text" name="institution" class="form-control" placeholder="Enter institution" required> 
+                <input type="text" name="institution" class="form-control" placeholder="Enter institution" required>
                 <input type="hidden" name="name_of_degree" value="GCSE">
             </div>
             <div class="mb-3">
@@ -398,15 +382,15 @@ span.btn {
                                                               </label>
                                                             </div>
                                                             </div>
-                                <div class="col-md-12" id="image_section_gcse">                                
+                                <div class="col-md-12" id="image_section_gcse">
                                     <div class="mb-3" id="image_section_gcse">
                                         <label for="exampleFormControlTextarea1" class="form-label">Certificate Image <span style="color:red">*</span></label><br>
                                         <input type="file" name="gcse_image"  accept="image/png, image/jpeg">
                                     </div>
                                 </div>
-            
-            
-            
+
+
+
                                                            <div class="col-md-12" style="display:none" id="pdf_section_gcse">
                                                             <div class="form-group">
                                                                 <div class="mb-3">
@@ -420,9 +404,9 @@ span.btn {
                                                                 </div>
                                                             </div>
                                                         </div>
-            
-            
-            
+
+
+
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -445,7 +429,7 @@ span.btn {
         <div class="modal-body">
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">University/School/College <span style="color:red">*</span></label>
-                <input type="text" name="institution" class="form-control" placeholder="Enter institution" required> 
+                <input type="text" name="institution" class="form-control" placeholder="Enter institution" required>
                 <input type="hidden" name="name_of_degree" value="A Level">
             </div>
             <div class="mb-3">
@@ -510,7 +494,7 @@ span.btn {
         <div class="modal-body">
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">University/School/College <span style="color:red">*</span></label>
-                <input type="text" name="institution" class="form-control" placeholder="Enter institution" required> 
+                <input type="text" name="institution" class="form-control" placeholder="Enter institution" required>
                 <input type="hidden" name="name_of_degree" value="Degree">
             </div>
             <div class="mb-3">
@@ -575,7 +559,7 @@ span.btn {
         <div class="modal-body">
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">University/School/College <span style="color:red">*</span></label>
-                <input type="text" name="institution" class="form-control" placeholder="Enter institution" required> 
+                <input type="text" name="institution" class="form-control" placeholder="Enter institution" required>
                 <input type="hidden" name="name_of_degree" value="Masters">
             </div>
             <div class="mb-3">
@@ -641,11 +625,11 @@ span.btn {
         <div class="modal-body">
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Name Of Degree<span style="color:red">*</span></label>
-                <input type="text" name="name_of_degree" class="form-control" placeholder="Enter Name Of Degree" required> 
+                <input type="text" name="name_of_degree" class="form-control" placeholder="Enter Name Of Degree" required>
             </div>
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">University/School/College <span style="color:red">*</span></label>
-                <input type="text" name="institution" class="form-control" placeholder="Enter institution" required> 
+                <input type="text" name="institution" class="form-control" placeholder="Enter institution" required>
             </div>
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Subject <span style="color:red">*</span></label>
@@ -675,7 +659,7 @@ span.btn {
                     <input type="file" name="more_image"  accept="image/png, image/jpeg" >
                 </div>
             </div>
-            
+
               <div class="col-md-12" style="display:none" id="pdf_section_more">
                 <div class="form-group">
                     <div class="mb-3">
@@ -703,12 +687,12 @@ span.btn {
 <script>
     $(document).ready(function(){
         $("#imagep_gcse").click(function(){
-           $("#pdf_section_gcse").hide(); 
-           $("#image_section_gcse").show(); 
+           $("#pdf_section_gcse").hide();
+           $("#image_section_gcse").show();
         });
           $("#pdf_gcse").click(function(){
-           $("#pdf_section_gcse").show(); 
-           $("#image_section_gcse").hide(); 
+           $("#pdf_section_gcse").show();
+           $("#image_section_gcse").hide();
         });
     });
 </script>
@@ -716,48 +700,48 @@ span.btn {
 <script>
     $(document).ready(function(){
         $("#imagep_alevel").click(function(){
-           $("#pdf_section_alevel").hide(); 
-           $("#image_section_alevel").show(); 
+           $("#pdf_section_alevel").hide();
+           $("#image_section_alevel").show();
         });
           $("#pdf_alevel").click(function(){
-           $("#pdf_section_alevel").show(); 
-           $("#image_section_alevel").hide(); 
+           $("#pdf_section_alevel").show();
+           $("#image_section_alevel").hide();
         });
     });
 </script>
 <script>
     $(document).ready(function(){
         $("#imagep_degree").click(function(){
-           $("#pdf_section_degree").hide(); 
-           $("#image_section_degree").show(); 
+           $("#pdf_section_degree").hide();
+           $("#image_section_degree").show();
         });
           $("#pdf_degree").click(function(){
-           $("#pdf_section_degree").show(); 
-           $("#image_section_degree").hide(); 
+           $("#pdf_section_degree").show();
+           $("#image_section_degree").hide();
         });
     });
 </script>
 <script>
     $(document).ready(function(){
         $("#imagep_masters").click(function(){
-           $("#pdf_section_masters").hide(); 
-           $("#image_section_masters").show(); 
+           $("#pdf_section_masters").hide();
+           $("#image_section_masters").show();
         });
           $("#pdf_masters").click(function(){
-           $("#pdf_section_masters").show(); 
-           $("#image_section_masters").hide(); 
+           $("#pdf_section_masters").show();
+           $("#image_section_masters").hide();
         });
     });
 </script>
 <script>
     $(document).ready(function(){
         $("#imagep_more").click(function(){
-           $("#pdf_section_more").hide(); 
-           $("#image_section_more").show(); 
+           $("#pdf_section_more").hide();
+           $("#image_section_more").show();
         });
           $("#pdf_more").click(function(){
-           $("#pdf_section_more").show(); 
-           $("#image_section_more").hide(); 
+           $("#pdf_section_more").show();
+           $("#image_section_more").hide();
         });
     });
 </script>
@@ -775,12 +759,12 @@ span.btn {
         <p class="created_at"></p><br>
         <p class="subject"></p><br>
         <div class="image_section">
-            
+
         </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        
+
       </div>
     </div>
   </div>
@@ -790,7 +774,7 @@ span.btn {
 <script>
     $(document).ready(function(){
         $(".view").click(function(){
-            var id=$(this).data("id"); 
+            var id=$(this).data("id");
             $(".modal-title").empty();
             $(".created_at").empty();
             $(".image_section").empty();
@@ -800,23 +784,23 @@ span.btn {
                      type:"GET",
                      dataType:"json",
                      success:function(data) {
-                        
+
                         $(".modal-title").html(data.name_of_degree);
                         $(".subject").html('Subject: '+data.subject);
                         $(".created_at").html('Submit Date: '+data.date);
-                        
+
                         if(data.image_type==1){
                             $(".image_section").append("<img src='{{asset('/')}}"+data.image+"' height='' width=''>");
                         }
                         if(data.image_type==2){
                             $(".image_section").append("<iframe src='{{asset('/')}}"+data.image+"' width='100%' height='700px'></iframe>");
                         }
-                        
-                        
-                       
-    
-                            
-    
+
+
+
+
+
+
                          }
                  });
              } else {

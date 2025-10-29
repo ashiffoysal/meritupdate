@@ -1,5 +1,5 @@
 @extends('layouts.frontend')
-@section('title', 'Lesson Complate List')
+@section('title', 'All Resource Tutorial')
 @section('content')
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <style>
@@ -16,23 +16,7 @@ span.btn {
     font-size: 9px !important;
 }
 </style>
-<div class="page-banner-area mt-5" >
-    <div class="d-table">
-        <div class="d-table-cell">
-            <div class="container">
-                <div class="page-banner-content">
-                    <h2></h2>
-                    <ul>
-                        <li>
-                            <a href="{{ url('/') }}"></a>
-                        </li>
-                        <li></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+
 <style>
     aside#layout-menu {
     margin: 15px 0px 0px 50px;
@@ -44,7 +28,7 @@ span.btn {
    @include('frontend.student.include.tutorcss')
 
     <!-- Layout wrapper -->
-    <div class="layout-wrapper layout-content-navbar" style="padding-top:20px">
+    <div class="layout-wrapper layout-content-navbar" style="padding-top:220px;">
       <div class="layout-container">
         <!-- Menu -->
 
@@ -109,49 +93,47 @@ span.btn {
                <!--start-->
                 <!---->
                  <div class="card mt-1">
-                    <h5 class="card-header">Lesson Completed List</h5>
+                    <h5 class="card-header">All Tutoring Video</h5>
 
-                    <div class="card-body">
+                    <div class="card-body" style="width:100%">
                          <div class="row">
                             <div class="col-md-12">
+                                      <div class="table-responsive">
                                <table class="table table-row-bordered table-row-gray-100 align-middle gs-0 gy-3" id="dataTableExample1" class="data-table" style="width:100%;font-size:14px">
                                 <thead>
                                     <tr>
-                                        <th scope="col">#</th>
-                                        <th scope="col">Date</th>
-                                        <th scope="col">Tutor</th>
-                                        <th scope="col">Subject</th>
-                                        <th scope="col">Total Hour</th>
-                                        <th scope="col">Status</th>
-                                        <th scope="col">Manage</th>
+                                    <th scope="col"># </th>
+                                    <th scope="col">Title</th>
+                                    <th scope="col">View</th>
+
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    @foreach($alldata as $key=>$data)
-                                    <tr>
-                                        <td>{{ ++$key }}</td>
-                                        <td>{{ $data->created_at->format('D d-m-Y') }}</td>
-                                        <td>{{ $data->Tutor->name }} </td>
-                                        <td>{{ $data->subject }}</td>
-                                        <td>{{ $data->total_hour }} Hours</td>
-                                        <td>@if($data->is_approve==0) <span class="btn btn-warning">pending</span> @elseif($data->is_approve==1) <span class="btn btn-success">approve</span> @elseif($data->is_approve==2) <span class="btn btn-danger">reject</span> @endif </td>
-                                        <td>
-                                            <a href="{{ url('/student/lesson-complete/view/'.$data->id) }}" data-placement="top" title="VIEW DETAILS"><i class="fa fa-eye" ></i></a>
-                                            @if($data->is_approve==1)
-                                            @else
-                                            <a href="{{ url('/student/lesson-complete/approve/'.$data->id) }}"  data-placement="top" title="APPROVE"><i class="fa fa-thumbs-up"></i></a>
-                                            <a href="{{ url('/student/lesson-complete/reject/'.$data->id) }}" data-placement="top" title="REJECT"><i class="fa fa-times"></i></a>
-                                            @endif
-                                        </td>
-                                    </tr>
-                                    @endforeach
-                                </tbody>
+                                    <tbody>
+                                      @foreach($allData as $key => $data)
+                                        <tr>
+
+                                            <td>#</td>
+                                            <td>{{$data->title}}</td>
+                                            <td>
+  <a class="btn btn-danger" href="{{ url('video/tutorial/view/'.$data->id) }}">view</a>
+                                            </td>
+
+                                        </tr>
+                                        @endforeach
+
+
+                                    </tbody>
                                 </table>
 
+                            </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
+
+
+
                <!--end-->
                 </div>
             <!-- / Content -->
@@ -170,4 +152,10 @@ span.btn {
     <!-- / Layout wrapper -->
 
 @include('frontend.student.include.tutorjs')
+
+<script>
+        CKEDITOR.replace( 'editor1' );
+</script>
+
+
 @endsection

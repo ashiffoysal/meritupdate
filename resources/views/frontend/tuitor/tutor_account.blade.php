@@ -8,31 +8,15 @@
     padding-bottom: 50px;
 }
 .main-navbar .navbar .navbar-nav .nav-item a i {
-  
-    top: 0px !important; 
- 
+
+    top: 0px !important;
+
 }
 span.btn {
     font-size: 9px !important;
 }
 </style>
-<div class="page-banner-area">
-    <div class="d-table">
-        <div class="d-table-cell">
-            <div class="container">
-                <div class="page-banner-content">
-                    <h2>Dashboard</h2>
-                    <ul>
-                        <li>
-                            <a href="{{ url('/') }}">Home</a>
-                        </li>
-                        <li>Dashboard</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+
 <style>
     aside#layout-menu {
     margin: 15px 0px 0px 50px;
@@ -44,14 +28,14 @@ span.btn {
    @include('frontend.student.include.tutorcss')
 
     <!-- Layout wrapper -->
-    <div class="layout-wrapper layout-content-navbar" style="padding-top:20px">
+    <div class="layout-wrapper layout-content-navbar" style="padding-top:220px">
       <div class="layout-container">
         <!-- Menu -->
 
         <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme" style="position: relative;">
           <div class="app-brand demo">
             <a href="{{ url('/') }}" class="app-brand-link">
-              
+
             </a>
 
             <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
@@ -79,21 +63,21 @@ span.btn {
 
             <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
               <!-- Search -->
-             
-           
+
+
               <div class="navbar-nav align-items-center">
                 <div class="nav-item d-flex align-items-center">
-                  
+
                 @include('frontend.student.include.headernotify')
-                
+
                 </div>
               </div>
               <!-- /Search -->
 
               <ul class="navbar-nav flex-row align-items-center ms-auto">
-                
+
                 @include('frontend.student.include.dasboardheader')
-                
+
               </ul>
             </div>
           </nav>
@@ -108,15 +92,15 @@ span.btn {
                 <!---->
                  <div class="card mt-2">
                     <h5 class="card-header">Update Profile</h5>
-                    
+
                     <div class="card-body">
                          <div class="row">
                              <form action="{{ url('/tutor/account') }}" method="post" enctype="multipart/form-data">
                         @csrf
                 <div class="col-md-12">
-           
-                              
-                             
+
+
+
                                             <div class="">
                                                 <div class="asif-tutor col-lg-12 row">
                                                     <!--  -->
@@ -162,7 +146,7 @@ span.btn {
                                                             <div class="form-group">
                                                                 <div class="mb-3">
                                                                     <label for="exampleFormControlInput1" class="form-label">Headline<span style="color:red">*</span></label>
-                                                                    <textarea class="form-control" required name="headline_for_tutor" placeholder="Enter Headline">{{ Auth::user()->headline_for_tutor }}</textarea> 
+                                                                    <textarea class="form-control" required name="headline_for_tutor" placeholder="Enter Headline">{{ Auth::user()->headline_for_tutor }}</textarea>
                                                                     <span style="font-size:10px">A short catchy summary (25-60 characters) help to promote your profile</span>
                                                                 </div>
                                                             </div>
@@ -171,8 +155,8 @@ span.btn {
                                                             <div class="form-group">
                                                                 <div class="mb-3">
                                                                     <label for="exampleFormControlInput1" class="form-label">About Me<span style="color:red">*</span></label>
-                                                                    <textarea class="form-control" required name="bio_details" placeholder="Enter about me">{{ Auth::user()->bio_details }}</textarea> 
-                                                                    
+                                                                    <textarea class="form-control" required name="bio_details" placeholder="Enter about me">{{ Auth::user()->bio_details }}</textarea>
+
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -180,8 +164,8 @@ span.btn {
                                                             <div class="form-group">
                                                                 <div class="mb-3">
                                                                     <label for="exampleFormControlInput1" class="form-label">About my sessions<span style="color:red">*</span></label>
-                                                                    <textarea class="form-control" required name="about_my_sessions" id="summernote" placeholder="Enter Your About my session">{!! Auth::user()->about_my_sessions !!}</textarea> 
-                                                                    
+                                                                    <textarea class="form-control" required name="about_my_sessions" id="summernote" placeholder="Enter Your About my session">{!! Auth::user()->about_my_sessions !!}</textarea>
+
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -189,8 +173,8 @@ span.btn {
                                                             <div class="form-group">
                                                                 <div class="mb-3">
                                                                     <label for="exampleFormControlInput1" class="form-label">Expericence(Optional)</label>
-                                                                    <textarea class="form-control" name="tutor_experience" placeholder="Enter Your Expericence"> {{ Auth::user()->tutor_experience }} </textarea> 
-                                                                    
+                                                                    <textarea class="form-control" name="tutor_experience" placeholder="Enter Your Expericence"> {{ Auth::user()->tutor_experience }} </textarea>
+
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -200,17 +184,17 @@ span.btn {
                                                                     <label for="exampleFormControlInput1" class="form-label">Expected Hourly Rate ( £ )<span style="color:red">*</span></label>
                                                                     <input type="number" required class="form-control expected_hourly_rate" name="expected_hourly_rate" placeholder="Expected Hourly Rate" value="{{ Auth::user()->expected_hourly_rate }}" min="1" onchange="expectedrate()">
                                                                     <span style="font-size:14px;color: red;" id="you_earn"></span>
-                                                                    
+
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        
+
                                                     </div>
                                                     <!-- branch -->
                                                 </div>
                                             </div>
-                                        
-                             
+
+
                                             <div class="">
                                                 <div class="asif-tutor col-lg-12 row">
                                                     <div class="col-lg-12 col-md-12 mt-1">
@@ -227,7 +211,7 @@ span.btn {
                                                                         <option value="Mrs" @if(Auth::user()->name_of_title=='Mrs') selected @endif>Mrs</option>
                                                                         <option value="Ms" @if(Auth::user()->name_of_title=='Ms') selected @endif>Ms</option>
                                                                         <option value="Miss" @if(Auth::user()->name_of_title=='Miss') selected @endif>Miss</option>
-                                                          
+
                                                                         <option value="Dr" @if(Auth::user()->name_of_title=='Dr') selected @endif>Dr</option>
                                                                         </select>
                                                                     </div>
@@ -266,7 +250,7 @@ span.btn {
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                        
+
                                                             <div class="col-md-6">
                                                                 <div class="form-group">
                                                                     <div class="mb-3">
@@ -282,7 +266,7 @@ span.btn {
                                                                 <div class="form-group">
                                                                     <div class="mb-3">
                                                                         <label for="exampleFormControlInput1" class="form-label">Ongoing / Completed Degree Type<span style="color:red">*</span></label>
-                                                                        <select class="form-control" name="current_gedree_type"> 
+                                                                        <select class="form-control" name="current_gedree_type">
                                                                         <option >-select-</option>
                                                                         <option value="Bachelor" @if(Auth::user()->current_gedree_type=='Bachelor') selected @endif>Bachelor</option>
                                                                         <option value="Master" @if(Auth::user()->current_gedree_type=='Master') selected @endif>Master</option>
@@ -310,14 +294,14 @@ span.btn {
                                                     </div>
                                                 </div>
                                             </div>
-                                        
+
                                 <!--  -->
-             
+
                                             <div class="">
                                                 <div class="asif-tutor col-lg-12 row">
                                                     <div class="col-lg-12 col-md-12 mt-1">
                                                          <div class="content" style="padding:15px">
-                                                        
+
                                                              <span class="badge bg-label-info">Contact Information</span>
                                                         </div>
                                                         <div class="row">
@@ -374,12 +358,12 @@ span.btn {
                                                                             <option value="13 mile"  @if(Auth::user()->travel_distence=='13 mile') selected @endif>13 mile</option>
                                                                             <option value="14 mile"  @if(Auth::user()->travel_distence=='14 mile') selected @endif>14 mile</option>
                                                                             <option value="15 mile"  @if(Auth::user()->travel_distence=='15 mile') selected @endif>15 mile</option>
-                                                                        
+
                                                                         </select>
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            
+
 
 
                                                         <br>
@@ -389,17 +373,17 @@ span.btn {
                                                                                                     <div class="mb-3">
                                                                                                                                             <label for="exampleFormControlInput1" class="form-label">Availability</label>
                                                                                                                                             <textarea class="form-control" name="availability" placeholder="Enter your Availability">{{ Auth::user()->availability }}</textarea>
-                                                                        
-                                                                        
-                                                                        
+
+
+
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            
+
                                                             <br>
 <br>
                                                             <div class="col-md-12">
-                                                          
+
                                                             </div>
 
 <!---->
@@ -407,17 +391,17 @@ span.btn {
                                                     </div>
                                                 </div>
                                             </div>
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
+
+
+
+
+
+
                                     <div class="" id="reference_section" @if(Auth::user()->for_branch_tutor==1) @else style="display:none" @endif >
                                                 <div class="asif-tutor col-lg-12 row">
                                                     <div class="col-lg-12 col-md-12 mt-1">
                                                          <div class="content" style="padding:15px">
-                                                        
+
                                                              <span class="badge bg-label-info">Add Reference</span>
                                                         </div>
                                                         <div class="row">
@@ -436,7 +420,7 @@ span.btn {
                                                                         <input type="text" class="form-control" name="reference_email" placeholder="Enter Email" value="{{ Auth::user()->reference_email }}">
                                                                     </div>
                                                                 </div>
-                                                            </div> 
+                                                            </div>
                                                                  <div class="col-md-6">
                                                                 <div class="form-group">
                                                                     <div class="mb-3">
@@ -461,20 +445,20 @@ span.btn {
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                        </div>    
-                                                    </div>    
-                                                </div>    
-                                        </div>    
-                                       
-                              
-                              
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                        </div>
+
+
+
                                             <div class="col-md-12">
                                                 <button type="submit" class="btn btn-success" >
                                                     Update
                                                 </button>
                                             </div>
-                                        
-                                
+
+
                             </div>
                         </div>
                     </section>
@@ -487,7 +471,7 @@ span.btn {
                <!--end-->
                 </div>
             <!-- / Content -->
-      
+
 
             <div class="content-backdrop fade"></div>
           </div>
@@ -501,7 +485,7 @@ span.btn {
     </div>
     <!-- / Layout wrapper -->
 
-                
+
                             </div>
                         </div>
                     </section>
@@ -530,31 +514,31 @@ $(document).ready(function(){
 
        }
    });
-   
+
     $("#forbranch").click(function () {
             if ($(this).is(":checked")) {
                 $("#reference_section").show();
-                
+
             } else {
                 $("#reference_section").hide();
-                
+
             }
         });
-   
-   
-   
+
+
+
 });
-   
+
 </script>
 
 
 <script>
     function addmoresub(){
-        
+
        $("#addmoresubjectfield").append('<div class="col-md-12 newassss" id="dvPassport"><div class="form-group row"> <div class="col-md-10 mb-3"><label for="exampleFormControlInput1" class="form-label">Subject Name<span style="color:red">*</span></label> <input type="text" class="form-control" name="other_subject_name[]" placeholder="example: History" value=""/></div><div class="col-md-2" style="padding-top:35px"><a onclick="delrow(this)"><i class="fa fa-trash"></i></a></div> </div>')
-        
+
     }
-    
+
 </script>
 <script>
 function delrow(el) {
@@ -580,8 +564,8 @@ $(el).closest(".newasssss").remove();
             }else{
                 $("#you_earn").html("");
             }
-            
-            
+
+
         }
 
 </script>
@@ -603,7 +587,7 @@ $(el).closest(".newasssss").remove();
          } else {
              alert('danger');
          }
-           
+
         });
     });
 </script>
